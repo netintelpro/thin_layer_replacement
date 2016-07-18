@@ -1,0 +1,224 @@
+{% extends 'layout' %}
+{% block title %}Cards{% endblock %}
+
+{% block breadcrumb %}
+<li><a href="index.html">Home</a></li>
+<li><a href="#">UI Elements</a></li>
+<li class="active"><a href="cards.html">Cards</a></li>
+{% endblock %}
+
+{% block styles %}
+{{ "plugins/chartist/dist/chartist.min.css" | asset_url | stylesheet_tag }} <!-- chartist -->
+{% endblock %}
+
+{% block scripts %}
+{{ "plugins/chartist/dist/chartist.min.js" | asset_url | script_tag }}          <!-- chartist -->
+{{ "demo/demo-cards.js" | asset_url | script_tag }}                             <!-- Initialize scripts for this page-->
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-3">
+        <div class="panel panel-default ov-h" data-widget='{"draggable": "false"}'>
+            <div class="panel-controls dropdown">
+                <button class="btn btn-icon-rounded dropdown-toggle" data-toggle="dropdown"><span class="material-icons inverted">more_vert</span></button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="">Action</a></li>
+                    <li><a href="">Another action</a></li>
+                    <li><a href="">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="">Separated link</a></li>
+                </ul>
+            </div>
+            <div class="panel-body ov-h">
+                <div class="pb-md">
+                    
+                    <h4 class="mt-n mb-n pt-xs"><small class="mt-n mb-sm">Page views</small>4,986</h4>
+                </div>
+                <div class="pb-md">
+                    <h4 class="mt-n mb-n pt-xs"><small class="mt-n mb-sm">Visitors</small>950</h4>
+                </div>
+                <div class="pb-md">
+                    <h4 class="mt-n mb-n pt-xs"><small class="mt-n mb-sm">Guests</small>19,862</h4>
+                </div>
+            </div>
+            <div id="areaChart2" class="chartist-full-width"></div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="panel panel-white">
+            <div class="panel-controls dropdown">
+                <button class="btn btn-icon-rounded dropdown-toggle" data-toggle="dropdown"><span class="material-icons inverted">more_vert</span></button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="">Action</a></li>
+                    <li><a href="">Another action</a></li>
+                    <li><a href="">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="">Separated link</a></li>
+                </ul>
+            </div>
+            <div class="panel-heading">
+                <h2>Sales figures</h2>
+            </div>
+            <div class="panel-body">
+                    <div id="chartistPie"></div>
+                <div class="pt-md pull-left">
+                <h4 class="mt-n mb-n pt-xs"><small class="mt-n mb-sm">Page views</small>4,986</h4>
+                </div>
+                <div class="pt-md pull-right text-right">
+                    <h4 class="mt-n mb-n pt-xs"><small class="mt-n mb-sm">Visitors</small>950</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card card-moviecard">
+            <div class="tabular">
+                <div class="tabular-row">
+                    <div class="tabular-cell movie-img">
+
+                        <div class="media">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img src="http://www.radfaces.com/images/avatars/little-pete-wrigley.jpg" alt="" class="media-object">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <p class="testimonial">
+                                    <strong>Fransisco Michell</strong> said 
+                                    <span class="testimonial-text">Best. Movie. Ever!</span>
+                                </p>
+                            </div>
+                        </div>
+
+
+
+                        <h6 class="star-rating">5.0</h6>
+
+                        <ul class="list-inline list-unstyled">
+                            <li><i class="material-icons">star_rate</i></li>
+                            <li><i class="material-icons">star_rate</i></li>
+                            <li><i class="material-icons">star_rate</i></li>
+                            <li><i class="material-icons">star_rate</i></li>
+                            <li><i class="material-icons">star_rate</i></li>
+                        </ul>
+                    </div>
+                    <div class="tabular-cell movie-info">
+                        <h2>Scott Pilgrim vs. The World</h2>
+                        <p>Adventure/Fantastic</p>
+                        <span class="time"><i class="material-icons">access_time</i> 112 Minutes</span>
+
+                        <p>Scott Pilgrim must defeat his new girlfriend's seven evil exes in order to win her heart.</p>
+                        
+                        <div class="row pb-md row-friends">
+                            <div class="col-md-9">
+                                <h6>Friends who bought</h6>
+                                <ul class="list-unstyled list-inline avatar">
+                                    <li><a href="#"><img src="http://www.radfaces.com/images/avatars/little-pete-wrigley.jpg" alt=""></a></li>
+                                    <li><a href="#"><img src="http://www.radfaces.com/images/avatars/aeon-flux.jpg" alt=""></a></li>
+                                    <li><a href="#"><img src="http://www.radfaces.com/images/avatars/amanda-bynes.jpg" alt=""></a></li>
+                                    <li><a href="#"><img src="http://www.radfaces.com/images/avatars/dina-alexander.jpg" alt=""></a></li>
+                                    <li><a href="#" class="more"><span>+42</span></a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-3 text-right">
+                                <span class="price">$8</span>
+                            </div>
+                        </div>
+                        
+
+                        <ul class="pull-right list-unstyled list-inline action-buttons">
+                            <li><a href="#" class="btn btn-inverse">Share</a></li>
+                            <li><a href="#" class="btn btn-raised btn-inverse">Buy Now</a></li>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card card-weather">
+            <div class="card-content">
+                <div class="card-image">
+                    <img src="https://static.pexels.com/photos/16502/pexels-photo-large.jpg" alt="Loading image..." class="img-responsive">
+                    <h3 class="card-image-headline">Paris</h3>
+                </div>
+            </div>
+            <div class="weather-heading">
+                <div class="weather-heading-top">
+                    <h4 class="pull-left m-n">Cloudy</h4>
+                    <a class="weather-settings pull-right" style="line-height:25px; height: 25px; width: 25px;"><i class="fa fa-wrench"></i></a>
+                </div><!-- weather-heading-top -->
+                <div class="weather-heading-bottom">
+                    <div class="weather-symbol pull-left"><i class="fa fa-cloud"></i></div>
+                    <div class="pull-right">
+                        <h1 class="weather-result">41°
+                            <span class="weather-details">
+                                <h4>Today</h4>
+                                <p>Cloudy</p>
+                                <p class="degree-range">42°-34°</p>
+                            </span><!-- weather-details -->
+                        </h1><!-- weather-result -->
+                    </div>
+                </div><!-- weather-heading-bottom -->
+            </div><!-- weather-heading -->
+        </div><!-- widget-weather -->
+    </div>
+    <div class="col-md-3">
+        <div class="card profile-card">
+            <div class="card-content">
+                <div class="card-image">
+                    <img src="https://static.pexels.com/photos/5021/nature-sunset-person-woman-large.jpg" alt="Loading image..." class="img-responsive">
+                    <h3 class="card-image-headline">Argelia Singer
+                        <small>Assistant Director</small>
+                    </h3>
+                </div>
+
+                <div class="card-body">
+                    <table class="table table-no-border">
+                        <tbody>
+                            <tr>
+                                <td><i class="material-icons">mail</i></span></td>
+                                <td>angellasinger@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <td><i class="material-icons">pin_drop</i></td>
+                                <td>824 Cowper ST,New Jersey</td>
+                            </tr>
+                            <tr>
+                                <td><i class="material-icons">call</i></td>
+                                <td>(540)-160-1234</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="btn btn-default btn-fab"><i class="material-icons" style="color: #d81b60">favorite</i></button>
+                </div>
+
+                <footer class="card-footer pt-n">
+                    <p>Argellia ipsum dolor sit amet, consectetur adipisicing elit. Placeat corporis quisquam repellendus ab illum libero officiis enim unde veniam iste.</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card profile-card">
+            <div class="card-content">
+                <div class="card-image">
+                    <img src="https://static.pexels.com/photos/52905/pexels-photo-52905-large.jpeg" alt="Loading image..." class="img-responsive">
+                </div>
+
+                <div class="card-body">
+                    <p>Argellia ipsum dolor sit amet, consectetur adipisicing elit. Placeat corporis quisquam repellendus ab illum libero officiis enim unde veniam iste.</p>
+                </div>
+
+                <footer class="card-footer pt-n">
+                    <button class="btn btn-raised btn-primary">Share</button>
+                    <button class="btn btn-flat btn-warning">Learn More</button>
+                </footer>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
