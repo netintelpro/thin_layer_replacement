@@ -16,7 +16,6 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
-gem 'bootstrap-sass'
 gem 'devise'
 gem 'high_voltage'
 group :development do
