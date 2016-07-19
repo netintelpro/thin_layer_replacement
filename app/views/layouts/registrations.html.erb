@@ -10,10 +10,12 @@
     <%= javascript_include_tag 'application',  media: 'all', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
-  <body class="animated-content infobar-overlay">
-    <%= render 'layouts/navigation' %>
+  
+  <body class="focused-form animated-content" style="background: url(https://usresponserestoration.files.wordpress.com/2015/06/duwamish-boeing-restoration-site_2015-6-19_noaa.jpg);">
+        
+    <%#= render 'layouts/navigation' %>
     <%= render 'layouts/messages' %>
-    <%= render 'layouts/top_nav' %>
+    <%#= render 'layouts/top_nav' %>
 
     <%= yield %>
 

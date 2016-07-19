@@ -1,7 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
-  layout "minimal"
-  layout 'application', only: [:edit] 
-
+  
  	private
 
  	def sign_up_params
@@ -15,6 +13,7 @@ class RegistrationsController < Devise::RegistrationsController
  	def edit
    		render layout: "application"
  	end
+
 
  	#protected
 	#def after_sign_up_path_for(resource)
