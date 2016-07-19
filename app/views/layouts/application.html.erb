@@ -10,13 +10,28 @@
     <%= javascript_include_tag 'application',  media: 'all', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
+
+    
   <body class="animated-content infobar-overlay">
-    <%= render 'layouts/navigation' %>
-    <%= render 'layouts/messages' %>
-    <%#= render 'layouts/top_nav' %>
-    <%= yield %>
-
-    <%= render 'layouts/js' %>
-
+    <%= render 'layouts/top_nav' %>
+  
+    <div id="wrapper">
+      <div id="layout-static">
+        <%= render "sidebar"%>
+        <div class="static-content-wrapper">
+          <div class="static-content">
+            <%#= render 'layouts/navigation' %>
+            <%= render 'layouts/messages' %>
+            <%= yield %>
+            <%= render 'layouts/js' %>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
+
+
+        
+        
+        

@@ -1,255 +1,69 @@
-<div id="wrapper">
-  <div id="layout-static">
-    <div class="static-sidebar-wrapper sidebar-blue">
-      <div class="static-sidebar">
-        <div class="sidebar">
-					<div class="widget" id="widget-profileinfo">
-        		<div class="widget-body">
-            	<div class="userinfo ">
-                <div class="avatar pull-left">
-                  <img src="assets/demo/avatar/avatar_15.png" class="img-responsive img-circle"> 
-                </div>
-                <div class="info">
-                  <span class="username">Jonathan Smith</span>
-                  <span class="useremail">jon@paperadmin.com</span>
-                </div>
-                <div class="acct-dropdown clearfix dropdown">
-                  <span class="pull-left">
-                  	<span class="online-status online"></span>Online
-                  </span>
-                  <span class="pull-right dropdown-toggle" data-toggle="dropdown"><a href="javascript:void(0)" class="btn btn-fab-caret btn-xs btn-fab"><i class="material-icons">arrow_drop_down</i><div class="ripple-container"></div></a></span>
-                  <ul class="dropdown-menu">
-                    <li><span class="online-status online"></span> Online</li>
-                    <li><span class="online-status online"></span> Online</li>
-                    <li><span class="online-status online"></span> Online</li>
-                    <li><span class="online-status online"></span> Online</li>
-                  </ul>
-                </div>
-            	</div>
-        		</div>
-    			</div>
-				<div class="widget stay-on-collapse" id="widget-sidebar">
-        	<nav role="navigation" class="widget-body">
-						<ul class="acc-menu">
-							<li class="nav-separator"><span>Navigation</span></li>
-							<li><a  class="withripple" href="index.html"><span class="icon">
-							<i class="material-icons">home</i></span><span>Dashboard</span><span class="badge badge-teal">2</span></a></li>
-							<li><a  class="withripple" href="#"><span class="icon"><i class="material-icons">code</i></span><span>Angular (coming soon!)</span></a></li>
-							<li><a  class="withripple" href="javascript:;"><span class="icon"><i class="material-icons">flash_on</i></span><span>Layout</span></a>
-							
-						</li>
-						<li><a  class="withripple" href="javascript:;"><span class="icon"><i class="material-icons">settings</i></span><span>Case Studies</span></a>
-					</nav>
-    		</div>
-			</div>
-    </div>
-	</div>
-  <div class="static-content-wrapper">
-    <div class="static-content">
-      <div class="page-content">
-        <ol class="breadcrumb">
-					<li class=""><a href="index.html">Home</a></li>
-					<li class="active"><a href="index.html">Dashboard</a></li>
-        </ol>
-        <div class="page-heading">            
-         	<h1>Welcome<small><%= link_to 'Users:', users_path %> <%= User.count %> registered</small></h1>
-       </div>
-       <div class="container-fluid">
-					<div data-widget-group="group1">
-    				<div class="row">
-		        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-	            <div class="info-tile info-tile-alt tile-indigo">
-                <div class="info">
-                  <div class="tile-heading"><span>Page Views</span></div>
-                  <div class="tile-body"><span>5,921</span></div>
-                </div>
-                <div class="stats">
-                  <div class="tile-content"><div id="dashboard-sparkline-indigo"></div></div>
-                </div>
-	            </div>
-		        </div>
-			      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-	            <div class="info-tile info-tile-alt tile-danger">
-                <div class="info">
-                  <div class="tile-heading"><span>Aquisitions</span></div>
-                  <div class="tile-body "><span>2,344</span></div>
-                </div>
-                <div class="stats">
-                  <div class="tile-content"><div id="dashboard-sparkline-gray"></div></div>
-                </div>
-	            </div>
-			      </div>
-		        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-	            <div class="info-tile info-tile-alt tile-primary">
-                <div class="info">
-                  <div class="tile-heading"><span>Conversions</span></div>
-                  <div class="tile-body "><span>1,032</span></div>
-                </div>
-                <div class="stats">
-                  <div class="tile-content"><div id="dashboard-sparkline-primary"></div></div>
-                </div>
-	            </div>
-		        </div>
-		        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-	            <div class="info-tile info-tile-alt tile-success clearfix">
-                <div class="info">
-                  <div class="tile-heading"><span>Returning</span></div>
-                  <div class="tile-body "><span>1,454</span></div>
-              	</div>
-                <div class="stats">
-	                <div class="tile-content"><div id="dashboard-sparkline-success"></div></div>
-	                </div>
-		            </div>
-			        </div>
-				    </div>
 
-    				<div class="row">
-        			<div class="col-md-12 full-width">
-            		<div class="panel panel-default no-shadow" data-widget='{"draggable": "false"}'>
-                <div class="panel-controls dropdown">
-                    <button class="btn btn-icon-rounded refresh-panel"><span class="material-icons inverted">refresh</span></button>
-                    <button class="btn btn-icon-rounded dropdown-toggle" data-toggle="dropdown"><span class="material-icons inverted">more_vert</span></button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="">Action</a></li>
-                        <li><a href="">Another action</a></li>
-                        <li><a href="">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="">Separated link</a></li>
-                    </ul>
-                </div>
-                <div class="panel-body">
-                   <div class="pb-md">
-                        <h4 class="mb-n">SALES STATISTICS<small>Aliquam tincidunt mauris eu risus.</small></h4>
-                        
-                    </div>
-                    <div id="fullChart" style="height: 325px " class="centered"></div>
-                </div>
-            </div>
+        
+        <div class="page-content">
+          <ol class="breadcrumb">
+            <li class=""><a href="index.html">Home</a></li>
+            <li class="active"><a href="index.html">Dashboard</a></li>
+          </ol>
+          <div class="page-heading">            
+            <h1>Welcome<small><%= link_to 'Users:', users_path %> <%= User.count %> registered</small></h1>
+          </div>
         </div>
-    				</div>
 
-    				<div class="row ">
-        <div class="col-md-3 col-sm-6">
-            <div class="panel panel-white ov-h" data-widget='{"draggable": "false"}'>
-                <div class="panel-controls dropdown">
-                    <button class="btn btn-icon-rounded dropdown-toggle" data-toggle="dropdown"><span class="material-icons inverted">more_vert</span></button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="">Action</a></li>
-                        <li><a href="">Another action</a></li>
-                        <li><a href="">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="">Separated link</a></li>
-                    </ul>
-                </div>
-                <div class="panel-heading">
-                    <h2>Visitors</h2>
-                </div>
-                <div class="panel-body ov-h">
-                    <div id="areaChart"></div>
-                    <div class="pt-md pull-left">
-                        <h4 class="mt-n mb-n pt-xs"><small class="mt-n mb-sm">Page views</small>424,121</h4>
-                    </div>
-                    <div class="pt-md pull-right text-right">
-                        <h4 class="mt-n mb-n pt-xs"><small class="mt-n mb-sm">Visitors</small>341</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="panel panel-white">
-                <div class="panel-controls dropdown">
-                    <button class="btn btn-icon-rounded dropdown-toggle" data-toggle="dropdown"><span class="material-icons inverted">more_vert</span></button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="">Action</a></li>
-                        <li><a href="">Another action</a></li>
-                        <li><a href="">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="">Separated link</a></li>
-                    </ul>
-                </div>
-                <div class="panel-heading">
-                    <h2>Revenue</h2>
-                </div>
-                <div class="panel-body">
-                        <div id="chartistPie"></div>
-                    <div class="pt-md pull-left">
-                    <h4 class="mt-n mb-n pt-xs"><small class="mt-n mb-sm">Primary</small>416 M</h4>
-                    </div>
-                    <div class="pt-md pull-right text-right">
-                        <h4 class="mt-n mb-n pt-xs"><small class="mt-n mb-sm">Commissions</small>320 K</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
+      <div class="col-md-3 col-sm-6">
 
-            <div class="panel panel-salesfigure">
-                <div class="panel-controls dropdown">
-                    <div class="togglebutton toggle-info">
-                        <label>
-                            <input type="checkbox" checked="">
-                        </label>
-                    </div>
-                </div>
-                
-                <div class="panel-heading">
-                    <h2>Markup</h2>
-                </div>
-                <div class="panel-body">
-                    <div class="full-bg">
-                        <div class="easypiechart" id="chart1" data-percent="65">
-                            <span class="percent percent-big"></span>
-                        </div>
-                    </div>
-                    <div class="pt-md pull-left">
-                        <h4 class="mt-n mb-n pt-xs"><small class="mt-n mb-sm">Cost of Goods</small>15%</h4>
-                    </div>
-                    <div class="pt-md pull-right text-right">
-                        <h4 class="mt-n mb-n pt-xs"><small class="mt-n mb-sm">Net</small>32%</h4>
-                    </div>
-                </div>
+          <div class="panel panel-salesfigure">
+              <div class="panel-controls dropdown">
+                  <div class="togglebutton toggle-info">
+                      <label>
+                          <input type="checkbox" checked="">
+                      </label>
+                  </div>
+              </div>
+              
+              <div class="panel-heading">
+                  <h2>Markup</h2>
+              </div>
+              <div class="panel-body">
+                  <div class="full-bg">
+                      <div class="easypiechart" id="chart1" data-percent="65">
+                          <span class="percent percent-big"></span>
+                      </div>
+                  </div>
+                  <div class="pt-md pull-left">
+                      <h4 class="mt-n mb-n pt-xs"><small class="mt-n mb-sm">Cost of Goods</small>15%</h4>
+                  </div>
+                  <div class="pt-md pull-right text-right">
+                      <h4 class="mt-n mb-n pt-xs"><small class="mt-n mb-sm">Net</small>32%</h4>
+                  </div>
+              </div>
+          </div>
+      </div> 
+      <div class="col-md-3 col-sm-6">
+        <div class="panel panel-salesfigure2">
+          <div class="panel-controls dropdown">
+            <div class="togglebutton toggle-warning">
+              <label>
+                <input type="checkbox" checked="">
+              </label>
             </div>
-        </div> 
-        <div class="col-md-3 col-sm-6">
-            <div class="panel panel-salesfigure2">
-                <div class="panel-controls dropdown">
-                    <div class="togglebutton toggle-warning">
-                        <label>
-                            <input type="checkbox" checked="">
-                        </label>
-                    </div>
-                </div>
-                <div class="panel-heading">
-                    <h2>Total Products</h2>
-                </div>
-                <div class="panel-body">
-                    <div id="dailysales2" class="text-center mt mb"></div>
-                    <div class="pt-md pull-left">
-                        <h4 class="mt-n mb-n pt-xs"><small class="mt-n mb-sm">Active Listings</small>4,986</h4>
-                    </div>
-                    <div class="pt-md pull-right text-right">
-                        <h4 class="mt-n mb-n pt-xs"><small class="mt-n mb-sm">Categories</small>950</h4>
-                    </div>
-                </div>
+          </div>
+          <div class="panel-heading">
+            <h2>Total Products</h2>
             </div>
+            <div class="panel-body">
+              <div id="dailysales2" class="text-center mt mb"></div>
+              <div class="pt-md pull-left">
+                <h4 class="mt-n mb-n pt-xs"><small class="mt-n mb-sm">Active Listings</small>4,986</h4>
+              </div>
+              <div class="pt-md pull-right text-right">
+                <h4 class="mt-n mb-n pt-xs"><small class="mt-n mb-sm">Categories</small>950</h4>
+              </div>
+            </div>
+          </div>
         </div>
-    				</div>
-
-	<div class="row">
-    <div class="col-md-6">
-        <div class="panel">
-            <div class="panel-calendar">
-                <div class="text-center pb-sm">
-                    <span class="text block p-md">Wednesday</span>
-                        <div class="text-center mt-n mb-n pt-xs ">
-                            <span class="circle text-center">10</span>
-                        </div> 
-                </div>
-                <div id="calendar"></div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
+      </div>
+      <div class="col-md-6">
         <div class="panel panel-default" >
             <div class="panel-controls dropdown">
               <button class="btn btn-icon-rounded refresh-panel"><span class="material-icons inverted">refresh</span></button>
