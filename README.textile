@@ -7,6 +7,8 @@ and 2) dredged material placement at depths of “mm to cm” (or “inches to 
 placements typical of disposal, which may be several meters in depth.
 
 CE-Dredge
+
+
 CE-Dredge, a collaborative effort between the US Army Engineer Research and Development
 Center (ERDC) and the US Army Corps of Engineers (USACE), Mobile District (CESAM), provides
 custom maps, tools, and applications designed to assist users in managing USACE dredging
@@ -14,6 +16,8 @@ operations.
 
 
 Regional Sediment Management
+
+
 The Regional Sediment Management (RSM) program develops the tools and knowledge necessary
 to assist in the development and implementation of regional strategies and an understanding
 of the effects of sediment management actions on all landscapes—from the upper watershed
@@ -22,8 +26,9 @@ a sediment budget tool that can be used to assess the impacts of activities on a
 and the overall region, morphology modeling systems for coast and river systems that predict
 long-term, large-scale morphology changes, and a framework for developing RSM strategies and
 implementing RSM solutions in the field.
-Project Overview
 
+
+Project Overview
 
 During Phase 1 of this project, the US Army Corps of Engineers, Mobile District, Operations
 Division, Spatial Data Branch, Geographic Information Systems Section(CESAM-OP-J-GIS)
@@ -40,3 +45,6 @@ more user friendly and by providing additional functionality, including collecti
 and making the map accessible to non-USACE users without a CAC as well as to USACE users.
 Now, CEERD-EP-E has requested that CESAM-OP-J-GIS enhance the web map and case study data
 collection web application.
+
+
+
