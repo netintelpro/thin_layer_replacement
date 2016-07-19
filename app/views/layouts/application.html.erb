@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= render 'layouts/head' %>
+    <%= render 'layouts/css' %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Rails Devise Roles" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Rails Devise Roles" %>">
@@ -8,36 +10,14 @@
     <%= javascript_include_tag 'application',  media: 'all', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
-  <body>
-    <header>
-      <%= render 'layouts/navigation' %>
+  <body class="animated-content infobar-overlay">
+    <%= render 'layouts/navigation' %>
+    <%= render 'layouts/messages' %>
+    <%= render 'layouts/top_nav' %>
 
-       <link type='text/css' href='http://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500' rel='stylesheet'>
-        <link type='text/css'  href="https://fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet"> 
+    <%= yield %>
 
-        <link href="assets/fonts/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">        
+    <%= render 'layouts/js' %>
 
-        <!-- Font Awesome -->
-        <link href="assets/css/styles.css" type="text/css" rel="stylesheet">                                     <!-- Core CSS with all styles -->
-
-        <link href="assets/plugins/codeprettifier/prettify.css" type="text/css" rel="stylesheet">                <!-- Code Prettifier -->
-
-        <link href="assets/plugins/dropdown.js/jquery.dropdown.css" type="text/css" rel="stylesheet">            <!-- iCheck -->
-        <link href="assets/plugins/progress-skylo/skylo.css" type="text/css" rel="stylesheet">                   <!-- Skylo -->
-
-        <!--[if lt IE 10]>
-            <script src="assets/js/media.match.min.js"></script>
-            <script src="assets/js/respond.min.js"></script>
-            <script src="assets/js/placeholder.min.js"></script>
-        <![endif]-->
-        <!-- The following CSS are included as plugins and can be removed if unused-->
-        
-        <link href="assets/plugins/gridforms/gridforms/gridforms.css" type="text/css" rel="stylesheet">                   <!-- Gridforms -->
-
-    </header>
-    <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
-    </main>
   </body>
 </html>
