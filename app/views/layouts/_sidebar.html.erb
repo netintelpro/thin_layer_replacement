@@ -7,10 +7,14 @@
             <div class="avatar pull-left">
               <img src="/demo/avatar/avatar_15.png" class="img-responsive img-circle"> 
             </div>
-            <div class="info">
-              <span class="username">Jonathan Smith</span>
-              <span class="useremail">jon@paperadmin.com</span>
-            </div>
+
+            <% if user_signed_in? %>
+              <div class="info">
+                <span class="username"><%# @user.name %></span>
+                <span class="useremail"></span>
+              </div>
+            <% end %>
+
             <div class="acct-dropdown clearfix dropdown">
               <span class="pull-left">
               	<span class="online-status online"></span>Online
@@ -29,14 +33,46 @@
   		<div class="widget stay-on-collapse" id="widget-sidebar">
       	<nav role="navigation" class="widget-body">
   				<ul class="acc-menu">
-  					<li class="nav-separator"><span>Navigation</span></li>
+            <% if user_signed_in? %>
+              <% if current_user.try(:admin?) %>
+                <li class="nav-separator"><span>Admin</span></li>
+                <li><%= link_to 'Users', users_path %></li>
+              <% end %>
+            <% end %>
+            <li class="nav-separator"><span>Case Studies</span></li>
+            <li>
+              <a href="#" class="">
+                <span class="icon">
+                  <i class="material-icons">place</i>
+                </span>
+                <span>Map Portal</span>
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                <span class="icon">
+                  <i class="material-icons">home</i>
+                </span>
+                <span>TLP Home Page</span>
+              </a>
+            </li>
+             <li>
+              <%= link_to case_studies_path, class: "withripple"  do %>
+                <span class="icon">
+                  <i class="material-icons">dashboard</i>
+                </span>
+                <span>Case Studies</span>
+              <% end %>
+            </li>
+
+  					<li class="nav-separator"><span>Case Studies</span></li>
             <% if user_signed_in? %>
               <li>
                 <%= link_to edit_user_registration_path, class: "withripple"  do %>
                   <span class="icon">
-                    <i class="material-icons">settings</i>
+                    <i class="material-icons">dashboard</i>
                   </span>
-                  <span>Edit Profile</span>
+                  <span>Dash Board</span>
                 <% end %>
               </li>
               <li>
@@ -45,6 +81,15 @@
                     <i class="material-icons">create_new_folder</i>
                   </span>
                   <span>Case Studies</span>
+                <% end %>
+              </li>
+              <li class="nav-separator"><span>my account</span></li>
+              <li>
+                <%= link_to edit_user_registration_path, class: "withripple"  do %>
+                  <span class="icon">
+                    <i class="material-icons">settings</i>
+                  </span>
+                  <span>Edit Profile</span>
                 <% end %>
               </li>
               <li>
@@ -73,27 +118,6 @@
                 <% end %>
               </li>
             <% end %>
-            <% if user_signed_in? %>
-              <% if current_user.try(:admin?) %>
-                <li><%= link_to 'Users', users_path %></li>
-              <% end %>
-            <% end %>
-            <li>
-              <a href="#" class="">
-                <span class="icon">
-                  <i class="material-icons">door</i>
-                </span>
-                <span>Map Portal</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span class="icon">
-                  <i class="material-icons">door</i>
-                </span>
-                <span>TLP Home Page</span>
-              </a>
-            </li>
           </ul>
   			</nav>
   		</div>

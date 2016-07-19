@@ -1,63 +1,168 @@
-<p id="notice"><%= notice %></p>
+<style type="text/css">
 
-<h1>Listing Case Studies</h1>
+   .card-image::before {
+      content:"";
+      display: block;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1;
+      background-color: rgba(0,0,0, .55);
+  }
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Placement event</th>
-      <th>Project name</th>
-      <th>Project desc</th>
-      <th>Project type</th>
-      <th>Project type other</th>
-      <th>Country</th>
-      <th>Region</th>
-      <th>County</th>
-      <th>City</th>
-      <th>District</th>
-      <th>Saga</th>
-      <th>Survey status</th>
-      <th>Survey create date</th>
-      <th>Survey update date</th>
-      <th>Project area</th>
-      <th>Project area uom</th>
-      <th>Case study pk</th>
-      <th>Integer</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  .on-top {
+    position: relative;
+    z-index: 99999999;
+  }
 
-  <tbody>
-    <% @case_studies.each do |case_study| %>
-      <tr>
-        <td><%= case_study.user_id %></td>
-        <td><%= case_study.placement_event_id %></td>
-        <td><%= case_study.project_name %></td>
-        <td><%= case_study.project_desc %></td>
-        <td><%= case_study.project_type_id %></td>
-        <td><%= case_study.project_type_other %></td>
-        <td><%= case_study.country %></td>
-        <td><%= case_study.region %></td>
-        <td><%= case_study.county %></td>
-        <td><%= case_study.city %></td>
-        <td><%= case_study.district_id %></td>
-        <td><%= case_study.saga_id %></td>
-        <td><%= case_study.survey_status_id %></td>
-        <td><%= case_study.survey_create_date %></td>
-        <td><%= case_study.survey_update_date %></td>
-        <td><%= case_study.project_area %></td>
-        <td><%= case_study.project_area_uom_id %></td>
-        <td><%= case_study.case_study_pk %></td>
-        <td><%= case_study.integer %></td>
-        <td><%= link_to 'Show', case_study %></td>
-        <td><%= link_to 'Edit', edit_case_study_path(case_study) %></td>
-        <td><%= link_to 'Destroy', case_study, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    </style>
 
-<br>
 
-<%= link_to 'New Case study', new_case_study_path %>
+<div class="static-content-wrapper">
+  <div class="static-content">
+    <div class="page-content">
+      <ol class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">UI Elements</a></li>
+        <li class="active"><a href="cards.html">Cards</a></li>
+      </ol>
+      <div class="page-heading">
+        <h1>Case Studies</h1>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="col-md-12">
+              <div class="panel panel-default ov-h" data-widget='{"draggable": "false"}'>
+                <div class="panel-controls dropdown">
+                  <button class="btn btn-icon-rounded dropdown-toggle" data-toggle="dropdown"><span class="material-icons inverted">more_vert</span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="">Action</a></li>
+                    <li><a href="">Another action</a></li>
+                    <li><a href="">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="">Separated link</a></li>
+                  </ul>
+                </div>
+                  <div class="panel-body ov-h">
+                    <div class="pb-md">
+                      <h4 class="mt-n mb-n pt-xs"><small class="mt-n mb-sm">Page views</small>4,986</h4>
+                    </div>
+                    <div class="pb-md">
+                      <h4 class="mt-n mb-n pt-xs"><small class="mt-n mb-sm">Visitors</small>950</h4>
+                    </div>
+                    <div class="pb-md">
+                      <h4 class="mt-n mb-n pt-xs"><small class="mt-n mb-sm">Guests</small>19,862</h4>
+                    </div>
+                  </div>
+                  <div id="areaChart2" class="chartist-full-width"></div>
+                </div>
+              </div>
+            <div class="col-md-12">
+              <div class="panel panel-white">
+                <div class="panel-controls dropdown">
+                  <button class="btn btn-icon-rounded dropdown-toggle" data-toggle="dropdown"><span class="material-icons inverted">more_vert</span></button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="">Action</a></li>
+                    <li><a href="">Another action</a></li>
+                    <li><a href="">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="">Separated link</a></li>
+                  </ul>
+                </div>
+                <div class="panel-heading">
+                  <h2>Sales figures</h2>
+                </div>
+                <div class="panel-body">
+                  <div id="chartistPie"></div>
+                  <div class="pt-md pull-left">
+                  <h4 class="mt-n mb-n pt-xs"><small class="mt-n mb-sm">Page views</small>4,986</h4>
+                  </div>
+                  <div class="pt-md pull-right text-right">
+                    <h4 class="mt-n mb-n pt-xs"><small class="mt-n mb-sm">Visitors</small>950</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <% @case_studies.each do |case_study| %>
+              <div class="col-md-4">
+              <div class="card profile-card">
+                <div class="card-content">
+                  <div class="card-image">
+                    <img src="https://usresponserestoration.files.wordpress.com/2015/06/duwamish-boeing-restoration-site_2015-6-19_noaa.jpg" alt="Loading image..." class="img-responsive">
+                    <h3 class="card-image-headline on-top">North Atlantic March Replacment
+                      <small>Assistant Director</small>
+                    </h3>
+                  </div>
+                  <div class="card-body on-top">
+                    <h6>SUMMARY</h6>
+                    <p class="text-muted">
+                      Dredging and placement activities are funded by the Disaster Relief Appropriations Act of 2013 (Public Law 113-2, also referred to as the Hurricane Sandy Relief Bill) through an existing U.S. Army Corps of Engineers’ Philadelphia District contract with Barnegat... 
+                    </p>
+                    <hr/>
+                    <table class="table table-no-border">
+                      <tbody>
+                        <tr>
+                          <td><i class="material-icons">settings</i></span></td>
+                          <td>angellasinger@gmail.com</td>
+                        </tr>
+                        <tr>
+                          <td><i class="material-icons">pin_drop</i></td>
+                          <td><%= case_study.city %></td>
+                        </tr>
+                        <tr>
+                          <td><i class="material-icons">call</i></td>
+                          <td>(540)-160-1234</td>
+                        </tr>
+                        <td><%= case_study.project_name %></td>
+                        <td><%= case_study.user_id %></td>
+                        <td><%= case_study.placement_event_id %></td>
+                        
+                        <td></td>
+                        <td><%= case_study.project_type_id %></td>
+                        
+                        <%= case_study.project_type_other %>
+                                        <td><%= case_study.survey_status_id %></td>
+                        <td><%= case_study.survey_create_date %></td>
+                        <td><%= case_study.survey_update_date %></td>
+                        <%= case_study.county %>
+                        <%= case_study.region %>
+                        <%= case_study.country %>
+
+                        
+                        <%= link_to 'Show', case_study, class: "btn btn-primary" %>
+                        <%= link_to 'Destroy', case_study, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %>
+
+        
+                      </tbody>
+                    </table>
+                    <%= link_to edit_case_study_path(case_study), class: "btn btn-primary btn-fab" do %>
+                      <i class="material-icons">settings</i>
+                    <% end %>
+                  </div>
+                  <footer class="card-footer pt-n">
+                    <p><%= case_study.project_desc %></p>
+                  </footer>
+                </div>
+              </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div> <!-- #page-content -->
+    </div>  
+    <footer role="contentinfo">
+      <div class="clearfix">
+        <ul class="list-unstyled list-inline pull-left">
+          <li><h6 style="margin: 0;">&copy; 2016 KaijuThemes</h6></li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+  <div class="extrabar-underlay"></div>
+</div>

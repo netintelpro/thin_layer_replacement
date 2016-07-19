@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%= render 'layouts/head' %>
-    <%= render 'layouts/css' %>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Rails Devise Roles" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Rails Devise Roles" %>">
+    <%= render 'layouts/meta' %>
+    
+
+    <title><%= content_for?(:title) ? yield(:title) : "TLP" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "TLP" %>">
+    
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application',  media: 'all', 'data-turbolinks-track' => true %>
+
     <%= csrf_meta_tags %>
   </head>
 
     
   <body class="animated-content infobar-overlay">
+
+    <%= render 'layouts/css' %>
+    
     <%= render 'layouts/top_nav' %>
   
     <div id="wrapper">
@@ -21,12 +26,17 @@
         <div class="static-content-wrapper">
           <div class="static-content">
             <%= render 'layouts/messages' %>
-            <%= yield %>
-            <%= render 'layouts/js' %>
+            <div class="page-content">
+              <%= yield %>
+              <%= render 'layouts/js' %>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
+
+
   </body>
 </html>
 

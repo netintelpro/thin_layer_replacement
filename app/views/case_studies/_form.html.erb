@@ -17,128 +17,104 @@
 
   <p class="lead text-muted">If you would like to submit a case study for inclusion on the site, please provide the following information for our consideration. No further action is necessary on your part until your project has been reviewed; you will then be contacted by the webmaster with further instructions. You will receive a confirmatory e-mail that your form has been received, with contact information in the event that you need to follow up for any reason.</p>
 
-  <p>Back to the main map | Thin Layer Placement Home Page</p>
-
-  
-
-          <fieldset>
-            <legend>ID</legend>
-            <div data-row-span="5">
-              <div data-field-span="1">
-                <labelu>User ID</label>
-                <%= f.number_field :user_id, class: "form-control" %>
-              </div>
-              <div data-field-span="1">
-                <labelu>Placement ID</label>
-                <%= f.number_field :placement_event_id, class: "form-control" %>
-              </div>
-            </div>
-          </fieldset>
-          <br/><br/>
-          <fieldset>
-            <legend>Project Information</legend>
-            <div data-row-span="8">
-              <div data-field-span="2">
-                <labelu>Project Name</label>
-                <%= f.number_field :project_name, class: "form-control" %>
-              </div>
-              <div data-field-span="6">
-                <labelu>Project Description</label>
-                <%= f.text_area :project_desc, type: "text", placeholder: "United States"%>
-              </div>
-            </div>
-          </fieldset>
-
-          <br/><br/>
-        <fieldset>
-          <legend>Gemeral</legend>
-          <div data-row-span="4">
-            <div data-field-span="1">
-              <label>Country</label>
-              <input type="text" autofocus placeholder="United States">
-              <%= f.text_field :project_type_id, type: "text", placeholder: "California"%>
-            </div>
-            <div data-field-span="1">
-              <label>County</label>
-              <%= f.text_field :project_type_other, type: "text", placeholder: "United States"%>
-            </div>
-            <div data-field-span="1">
-              <label>County</label>
-              <%= f.text_field :district_id, type: "text", placeholder: "United States"%>
-            </div>
-            <div data-field-span="1">
-              <label>County</label>
-              <%= f.text_field :saga_id, type: "text", placeholder: "United States"%>
-            </div>
-            <div data-field-span="1">
-              <label>City</label>
-              <%= f.text_field :survey_status_id, type: "text", placeholder: "City"%>
-            </div>
-            <div data-field-span="1">
-              <label>County</label>
-              <%= f.text_field :saga_id, type: "text", placeholder: "United States"%>
-            </div>
-            <div data-field-span="1">
-              <label>City</label>
-              <%= f.text_field :survey_create_date, type: "text", placeholder: "City"%>
-            </div>
-            <div data-field-span="1">
-              <label>County</label>
-              <%= f.text_field :survey_update_date, type: "text", placeholder: "United States"%>
-            </div>
-            <div data-field-span="1">
-              <label>Project Area</label>
-              <%= f.text_field :project_area, type: "text", placeholder: "City"%>
-            </div>
-            <div data-field-span="1">
-              <label>City</label>
-              <%= f.text_field :project_area_uom_id, type: "text", placeholder: "City"%>
-            </div>
-            <div data-field-span="1">
-              <label>City</label>
-              <%= f.text_field :case_study_pk, type: "text", placeholder: "City"%>
-            </div>
-            <div data-field-span="1">
-              <label>City</label>
-              <%= f.text_field :integer, type: "text", placeholder: "City"%>
-            </div>
-          </div>
-        </fieldset>
-        </fieldset>
-        <fieldset>
-          <legend>Overview</legend>
-          <div data-row-span="4">
-            <div data-field-span="1">
-              <label>Country</label>
-              <input type="text" autofocus placeholder="United States">
-              <%= f.text_field :country, type: "text", placeholder: "California"%>
-            </div>
-            <div data-field-span="1">
-              <label>County</label>
-              <%= f.text_field :county, type: "text", placeholder: "United States"%>
-            </div>
-            <div data-field-span="1">
-              <label>City</label>
-              <%= f.text_field :city, type: "text", placeholder: "City"%>
-            </div>
-          </div>
-        </fieldset>
-        <fieldset>
-          <div data-row-span="10">
-            <div data-field-span="2">
-              <label>USACE District</label>
-              <input type="text" autofocus placeholder="United States">
-            </div>
-          </div>
-        </fieldset>
-        <div class="clearfix pt-md">
-          <div class="pull-right">
-            <%= f.submit "Submit Form", class: "btn-raised btn-primary btn"%>
-            <button class="btn-default btn">Cancel</button>
-          </div>
-        </div>
+  <fieldset>
+    <legend>ID</legend>
+    <div data-row-span="5">
+      <div data-field-span="1">
+        <labelu>User ID</label>
+        <%= f.number_field :user_id, class: "form-control" %>
+      </div>
+      <div data-field-span="1">
+        <labelu>Placement ID</label>
+        <%= f.number_field :placement_event_id, class: "form-control" %>
       </div>
     </div>
+  </fieldset>
+  <br/><br/>
+  <fieldset>
+    <legend>Project Information</legend>
+    <div data-row-span="8">
+      <div data-field-span="2">
+        <labelu>Project Name</label>
+        <%= f.number_field :project_name, class: "form-control" %>
+      </div>
+      <div data-field-span="6">
+        <labelu>Project Description</label>
+        <%= f.text_area :project_desc, type: "text", placeholder: "United States"%>
+      </div>
+    </div>
+  </fieldset>
+
+  <br/><br/>
+  <fieldset>
+    <legend>Gemeral</legend>
+    <div data-row-span="4">
+      <div data-field-span="1">
+        <label>Project Type ID</label>
+        <input type="text" autofocus placeholder="United States">
+        <%= f.text_field :project_type_id, type: "text", placeholder: "California"%>
+      </div>
+      <div data-field-span="1">
+        <label>Project Type Other</label>
+        <%= f.text_field :project_type_other, type: "text", placeholder: "United States"%>
+      </div>
+      <div data-field-span="1">
+        <label>District ID</label>
+        <%= f.text_field :district_id, type: "text", placeholder: "United States"%>
+      </div>
+      <div data-field-span="1">
+        <label>Survey Status</label>
+        <%= f.text_field :survey_status_id, type: "text", placeholder: "City"%>
+      </div>
+      <div data-field-span="1">
+        <label>SAGA ID</label>
+        <%= f.text_field :saga_id, type: "text", placeholder: "United States"%>
+      </div>
+      <div data-field-span="1">
+        <label>Project Area</label>
+        <%= f.text_field :project_area, type: "text", placeholder: "City"%>
+      </div>
+      <div data-field-span="1">
+        <label>Project Area UOM ID</label>
+        <%= f.text_field :project_area_uom_id, type: "text", placeholder: "City"%>
+      </div>
+      <div data-field-span="1">
+        <label>Case Study ID</label>
+        <%= f.text_field :case_study_pk, type: "text", placeholder: "City"%>
+      </div>
+    </div>
+  </fieldset>
+  </fieldset>
+  <fieldset>
+    <legend>Overview</legend>
+    <div data-row-span="4">
+      <div data-field-span="1">
+        <label>Country</label>
+        <input type="text" autofocus placeholder="United States">
+        <%= f.text_field :country, type: "text", placeholder: "California"%>
+      </div>
+      <div data-field-span="1">
+        <label>County</label>
+        <%= f.text_field :county, type: "text", placeholder: "United States"%>
+      </div>
+      <div data-field-span="1">
+        <label>City</label>
+        <%= f.text_field :city, type: "text", placeholder: "City"%>
+      </div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <div data-row-span="10">
+      <div data-field-span="2">
+        <label>USACE District</label>
+        <input type="text" autofocus placeholder="United States">
+      </div>
+    </div>
+  </fieldset>
+  <div class="clearfix pt-md">
+    <div class="pull-right">
+      <%= f.submit "Submit Form", class: "btn-raised btn-primary btn"%>
+      <button class="btn-default btn">Cancel</button>
+    </div>
   </div>
-</div>
 <% end %>

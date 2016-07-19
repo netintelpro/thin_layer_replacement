@@ -1,6 +1,20 @@
-<h1>Editing Case Study</h1>
+<div class="static-content-wrapper">
+  <div class="static-content">
+    <div class="page-content">
+      <ol class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">UI Elements</a></li>
+        <li class="active"><a href="cards.html">Cards</a></li>
+      </ol>
+      <div class="page-heading">
+        <h1>Editing Case Study</h1>
+      </div>
+      <div class="container-fluid">
+				<%= render 'form' %>
+				<%= link_to 'Show', @case_study %> |
+				<%= link_to 'Back', case_studies_path %>
+			</div>
+		</div>
+	</div>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @case_study %> |
-<%= link_to 'Back', case_studies_path %>

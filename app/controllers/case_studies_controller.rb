@@ -15,6 +15,7 @@ class CaseStudiesController < ApplicationController
   # GET /case_studies/new
   def new
     @case_study = CaseStudy.new
+    @user = User.all
   end
 
   # GET /case_studies/1/edit
