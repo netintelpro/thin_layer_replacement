@@ -17,10 +17,10 @@
   
     <div id="wrapper">
       <div id="layout-static">
-        <%= render "sidebar"%>
+        <%= render "layouts/sidebar"%>
         <div class="static-content-wrapper">
           <div class="static-content">
-            <%#= render 'layouts/navigation' %>
+            <%= render 'layouts/navigation' %>
             <%= render 'layouts/messages' %>
             <%= yield %>
             <%= render 'layouts/js' %>

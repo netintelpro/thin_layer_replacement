@@ -30,15 +30,50 @@
     	<nav role="navigation" class="widget-body">
 				<ul class="acc-menu">
 					<li class="nav-separator"><span>Navigation</span></li>
-					<li><a  class="withripple" href="index.html"><span class="icon">
-					<i class="material-icons">home</i></span><span>Dashboard</span><span class="badge badge-teal">2</span></a></li>
-					<li><a  class="withripple" href="#"><span class="icon"><i class="material-icons">code</i></span><span>Angular (coming soon!)</span></a></li>
-					<li><a  class="withripple" href="javascript:;"><span class="icon"><i class="material-icons">flash_on</i></span><span>Layout</span></a>
-					
-				</li>
-				<li><a  class="withripple" href="javascript:;"><span class="icon"><i class="material-icons">settings</i></span><span>Case Studies</span></a>
+          <% if user_signed_in? %>
+
+            <li>
+              <%= link_to edit_user_registration_path, class: "withripple"  do %>
+                <span class="icon">
+                  <i class="material-icons">settings</i>
+                </span>
+                <span>Edit Profile</span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, :method=>'delete' do %>
+                <span class="icon">
+                  <i class="material-icons">logout</i>
+                </span>
+                <span>Logout</span>
+              <% end %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to new_user_session_path do %>
+                <span class="icon">
+                  <i class="material-icons">logout</i>
+                </span>
+                <span>Login</span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_user_registration_path do %>
+                <span class="icon">
+                  <i class="material-icons">door</i>
+                </span>
+                <span>Sign Up</span>
+              <% end %>
+            </li>
+          <% end %>
+          <% if user_signed_in? %>
+            <% if current_user.try(:admin?) %>
+              <li><%= link_to 'Users', users_path %></li>
+            <% end %>
+          <% end %>
 			</nav>
 		</div>
 	</div>
 </div>
 </div>
+
