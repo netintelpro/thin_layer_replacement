@@ -1,0 +1,93 @@
+<%= form_for(@case_study) do |f| %>
+  <% if @case_study.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@case_study.errors.count, "error") %> prohibited this case_study from being saved:</h2>
+
+      <ul>
+      <% @case_study.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :placement_event_id %><br>
+    <%= f.text_field :placement_event_id %>
+  </div>
+  <div class="field">
+    <%= f.label :project_name %><br>
+    <%= f.text_field :project_name %>
+  </div>
+  <div class="field">
+    <%= f.label :project_desc %><br>
+    <%= f.text_area :project_desc %>
+  </div>
+  <div class="field">
+    <%= f.label :project_type_id %><br>
+    <%= f.number_field :project_type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :project_type_other %><br>
+    <%= f.text_field :project_type_other %>
+  </div>
+  <div class="field">
+    <%= f.label :country %><br>
+    <%= f.text_field :country %>
+  </div>
+  <div class="field">
+    <%= f.label :region %><br>
+    <%= f.text_field :region %>
+  </div>
+  <div class="field">
+    <%= f.label :county %><br>
+    <%= f.text_field :county %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :district_id %><br>
+    <%= f.number_field :district_id %>
+  </div>
+  <div class="field">
+    <%= f.label :saga_id %><br>
+    <%= f.number_field :saga_id %>
+  </div>
+  <div class="field">
+    <%= f.label :survey_status_id %><br>
+    <%= f.number_field :survey_status_id %>
+  </div>
+  <div class="field">
+    <%= f.label :survey_create_date %><br>
+    <%= f.date_select :survey_create_date %>
+  </div>
+  <div class="field">
+    <%= f.label :survey_update_date %><br>
+    <%= f.date_select :survey_update_date %>
+  </div>
+  <div class="field">
+    <%= f.label :project_area %><br>
+    <%= f.number_field :project_area %>
+  </div>
+  <div class="field">
+    <%= f.label :project_area_uom_id %><br>
+    <%= f.number_field :project_area_uom_id %>
+  </div>
+  <div class="field">
+    <%= f.label :case_study_pk %><br>
+    <%= f.text_field :case_study_pk %>
+  </div>
+  <div class="field">
+    <%= f.label :integer %><br>
+    <%= f.text_field :integer %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

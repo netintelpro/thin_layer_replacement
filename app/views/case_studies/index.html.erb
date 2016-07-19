@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Case Studies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Placement event</th>
+      <th>Project name</th>
+      <th>Project desc</th>
+      <th>Project type</th>
+      <th>Project type other</th>
+      <th>Country</th>
+      <th>Region</th>
+      <th>County</th>
+      <th>City</th>
+      <th>District</th>
+      <th>Saga</th>
+      <th>Survey status</th>
+      <th>Survey create date</th>
+      <th>Survey update date</th>
+      <th>Project area</th>
+      <th>Project area uom</th>
+      <th>Case study pk</th>
+      <th>Integer</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @case_studies.each do |case_study| %>
+      <tr>
+        <td><%= case_study.user_id %></td>
+        <td><%= case_study.placement_event_id %></td>
+        <td><%= case_study.project_name %></td>
+        <td><%= case_study.project_desc %></td>
+        <td><%= case_study.project_type_id %></td>
+        <td><%= case_study.project_type_other %></td>
+        <td><%= case_study.country %></td>
+        <td><%= case_study.region %></td>
+        <td><%= case_study.county %></td>
+        <td><%= case_study.city %></td>
+        <td><%= case_study.district_id %></td>
+        <td><%= case_study.saga_id %></td>
+        <td><%= case_study.survey_status_id %></td>
+        <td><%= case_study.survey_create_date %></td>
+        <td><%= case_study.survey_update_date %></td>
+        <td><%= case_study.project_area %></td>
+        <td><%= case_study.project_area_uom_id %></td>
+        <td><%= case_study.case_study_pk %></td>
+        <td><%= case_study.integer %></td>
+        <td><%= link_to 'Show', case_study %></td>
+        <td><%= link_to 'Edit', edit_case_study_path(case_study) %></td>
+        <td><%= link_to 'Destroy', case_study, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Case study', new_case_study_path %>
