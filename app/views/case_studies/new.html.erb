@@ -1,5 +1,47 @@
-<h1>New Case Study</h1>
 
-<%= render 'form' %>
 
-<%= link_to 'Back', case_studies_path %>
+
+<div class="static-content-wrapper">
+	<div class="static-content">
+  	<div class="page-content">
+      <div class="container-fluid">
+				<div data-widget-group="group1">
+			    <br/>
+			    <div class="row">
+			    	<div class="col-md-8 col-md-offset-2">
+			    		<ol class="breadcrumb">
+								<li><a href="index.html">[User Name</a></li>
+								<li>Case Studies</li>
+								<li class="active"><a href="form-gridforms.html">Case Study Submittal</a></li>
+              </ol>
+              <div class="page-heading">
+                <h1>Create a New Case Study</h1>
+             	</div>
+            	<div class="panel panel-primary" data-widget='{"draggable": "false"}'>
+								<div class="panel-heading">
+									<h2>Let's Get Started</h2>
+								</div>
+								<div class="panel-body">
+									<div class="p-xxl" id="horizontal-form">
+										<%= render 'form' %>
+										<%= link_to 'Back', case_studies_path %>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+        </div> <!-- .container-fluid -->
+    	</div> <!-- #page-content -->
+    </div>
+    <footer role="contentinfo">
+			<div class="clearfix">
+        <ul class="list-unstyled list-inline pull-left">
+          <li><h6 style="margin: 0;">&copy; 2016 KaijuThemes</h6></li>
+        </ul>
+	    </div>
+		</footer>
+	</div>
+  <div class="extrabar-underlay"></div>
+</div>
+</div>

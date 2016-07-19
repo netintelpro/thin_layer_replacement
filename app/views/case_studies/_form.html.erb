@@ -1,93 +1,144 @@
-<%= form_for(@case_study) do |f| %>
+<%= form_for(@case_study, :html => {:class => 'grid-form'}) do |f| %>
+
   <% if @case_study.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@case_study.errors.count, "error") %> prohibited this case_study from being saved:</h2>
-
+      <h2>
+        <%= pluralize(@case_study.errors.count, "error") %> prohibited this case_study from being saved:
+      </h2>
       <ul>
-      <% @case_study.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @case_study.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
+  <h3>Case Study Submittal Form</h3>
+
+  <p class="lead text-muted">If you would like to submit a case study for inclusion on the site, please provide the following information for our consideration. No further action is necessary on your part until your project has been reviewed; you will then be contacted by the webmaster with further instructions. You will receive a confirmatory e-mail that your form has been received, with contact information in the event that you need to follow up for any reason.</p>
+
+  <p>Back to the main map | Thin Layer Placement Home Page</p>
+
+  
+
+          <fieldset>
+            <legend>ID</legend>
+            <div data-row-span="5">
+              <div data-field-span="1">
+                <labelu>User ID</label>
+                <%= f.number_field :user_id, class: "form-control" %>
+              </div>
+              <div data-field-span="1">
+                <labelu>Placement ID</label>
+                <%= f.number_field :placement_event_id, class: "form-control" %>
+              </div>
+            </div>
+          </fieldset>
+          <br/><br/>
+          <fieldset>
+            <legend>Project Information</legend>
+            <div data-row-span="8">
+              <div data-field-span="2">
+                <labelu>Project Name</label>
+                <%= f.number_field :project_name, class: "form-control" %>
+              </div>
+              <div data-field-span="6">
+                <labelu>Project Description</label>
+                <%= f.text_area :project_desc, type: "text", placeholder: "United States"%>
+              </div>
+            </div>
+          </fieldset>
+
+          <br/><br/>
+        <fieldset>
+          <legend>Gemeral</legend>
+          <div data-row-span="4">
+            <div data-field-span="1">
+              <label>Country</label>
+              <input type="text" autofocus placeholder="United States">
+              <%= f.text_field :project_type_id, type: "text", placeholder: "California"%>
+            </div>
+            <div data-field-span="1">
+              <label>County</label>
+              <%= f.text_field :project_type_other, type: "text", placeholder: "United States"%>
+            </div>
+            <div data-field-span="1">
+              <label>County</label>
+              <%= f.text_field :district_id, type: "text", placeholder: "United States"%>
+            </div>
+            <div data-field-span="1">
+              <label>County</label>
+              <%= f.text_field :saga_id, type: "text", placeholder: "United States"%>
+            </div>
+            <div data-field-span="1">
+              <label>City</label>
+              <%= f.text_field :survey_status_id, type: "text", placeholder: "City"%>
+            </div>
+            <div data-field-span="1">
+              <label>County</label>
+              <%= f.text_field :saga_id, type: "text", placeholder: "United States"%>
+            </div>
+            <div data-field-span="1">
+              <label>City</label>
+              <%= f.text_field :survey_create_date, type: "text", placeholder: "City"%>
+            </div>
+            <div data-field-span="1">
+              <label>County</label>
+              <%= f.text_field :survey_update_date, type: "text", placeholder: "United States"%>
+            </div>
+            <div data-field-span="1">
+              <label>Project Area</label>
+              <%= f.text_field :project_area, type: "text", placeholder: "City"%>
+            </div>
+            <div data-field-span="1">
+              <label>City</label>
+              <%= f.text_field :project_area_uom_id, type: "text", placeholder: "City"%>
+            </div>
+            <div data-field-span="1">
+              <label>City</label>
+              <%= f.text_field :case_study_pk, type: "text", placeholder: "City"%>
+            </div>
+            <div data-field-span="1">
+              <label>City</label>
+              <%= f.text_field :integer, type: "text", placeholder: "City"%>
+            </div>
+          </div>
+        </fieldset>
+        </fieldset>
+        <fieldset>
+          <legend>Overview</legend>
+          <div data-row-span="4">
+            <div data-field-span="1">
+              <label>Country</label>
+              <input type="text" autofocus placeholder="United States">
+              <%= f.text_field :country, type: "text", placeholder: "California"%>
+            </div>
+            <div data-field-span="1">
+              <label>County</label>
+              <%= f.text_field :county, type: "text", placeholder: "United States"%>
+            </div>
+            <div data-field-span="1">
+              <label>City</label>
+              <%= f.text_field :city, type: "text", placeholder: "City"%>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <div data-row-span="10">
+            <div data-field-span="2">
+              <label>USACE District</label>
+              <input type="text" autofocus placeholder="United States">
+            </div>
+          </div>
+        </fieldset>
+        <div class="clearfix pt-md">
+          <div class="pull-right">
+            <%= f.submit "Submit Form", class: "btn-raised btn-primary btn"%>
+            <button class="btn-default btn">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :placement_event_id %><br>
-    <%= f.text_field :placement_event_id %>
-  </div>
-  <div class="field">
-    <%= f.label :project_name %><br>
-    <%= f.text_field :project_name %>
-  </div>
-  <div class="field">
-    <%= f.label :project_desc %><br>
-    <%= f.text_area :project_desc %>
-  </div>
-  <div class="field">
-    <%= f.label :project_type_id %><br>
-    <%= f.number_field :project_type_id %>
-  </div>
-  <div class="field">
-    <%= f.label :project_type_other %><br>
-    <%= f.text_field :project_type_other %>
-  </div>
-  <div class="field">
-    <%= f.label :country %><br>
-    <%= f.text_field :country %>
-  </div>
-  <div class="field">
-    <%= f.label :region %><br>
-    <%= f.text_field :region %>
-  </div>
-  <div class="field">
-    <%= f.label :county %><br>
-    <%= f.text_field :county %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :district_id %><br>
-    <%= f.number_field :district_id %>
-  </div>
-  <div class="field">
-    <%= f.label :saga_id %><br>
-    <%= f.number_field :saga_id %>
-  </div>
-  <div class="field">
-    <%= f.label :survey_status_id %><br>
-    <%= f.number_field :survey_status_id %>
-  </div>
-  <div class="field">
-    <%= f.label :survey_create_date %><br>
-    <%= f.date_select :survey_create_date %>
-  </div>
-  <div class="field">
-    <%= f.label :survey_update_date %><br>
-    <%= f.date_select :survey_update_date %>
-  </div>
-  <div class="field">
-    <%= f.label :project_area %><br>
-    <%= f.number_field :project_area %>
-  </div>
-  <div class="field">
-    <%= f.label :project_area_uom_id %><br>
-    <%= f.number_field :project_area_uom_id %>
-  </div>
-  <div class="field">
-    <%= f.label :case_study_pk %><br>
-    <%= f.text_field :case_study_pk %>
-  </div>
-  <div class="field">
-    <%= f.label :integer %><br>
-    <%= f.text_field :integer %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</div>
 <% end %>

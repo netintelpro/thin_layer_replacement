@@ -5,7 +5,7 @@
     		<div class="widget-body">
         	<div class="userinfo ">
             <div class="avatar pull-left">
-              <img src="assets/demo/avatar/avatar_15.png" class="img-responsive img-circle"> 
+              <img src="/demo/avatar/avatar_15.png" class="img-responsive img-circle"> 
             </div>
             <div class="info">
               <span class="username">Jonathan Smith</span>
@@ -40,7 +40,7 @@
                 <% end %>
               </li>
               <li>
-                <%= link_to destroy_user_session_path, :method=>'delete' do %>
+                <%= link_to new_case_study_path do %>
                   <span class="icon">
                     <i class="material-icons">create_new_folder</i>
                   </span>
@@ -78,6 +78,22 @@
                 <li><%= link_to 'Users', users_path %></li>
               <% end %>
             <% end %>
+            <li>
+              <a href="#" class="">
+                <span class="icon">
+                  <i class="material-icons">door</i>
+                </span>
+                <span>Map Portal</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="icon">
+                  <i class="material-icons">door</i>
+                </span>
+                <span>TLP Home Page</span>
+              </a>
+            </li>
           </ul>
   			</nav>
   		</div>
