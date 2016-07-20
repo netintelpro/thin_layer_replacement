@@ -26,8 +26,8 @@
 			<div class="options">
 				<ul class="nav nav-tabs">
 		  		<li class="active">
-						<a href="#monitoring" data-toggle="tab">
-							Monitoring
+						<a href="#construction" data-toggle="tab">
+							Construction
 						</a>
 			  	</li>
 				  <li>
@@ -35,23 +35,29 @@
 						Regulatory Aspects
 					</a>
 				  </li>
-				  <li>
-					<a href="#other" data-toggle="tab">
-						Other Information
-					</a>
-				  </li>
-				   <li>
-					<a href="#file" data-toggle="tab">
-						Associated Files
-					</a>
-				  </li>
+			  	<li>
+						<a href="#monitoring" data-toggle="tab">
+							Monitoring
+						</a>
+			  	</li>
+
+          <li>
+          	<a href="#lessons" data-toggle="tab">
+          		Lessons Learned
+          	</a>
+          </li>
+          <li>
+          	<a href="#files" data-toggle="tab">
+          		Associated Files
+          	</a>
+          </li>
 				</ul>
 				</div>
 			</div>
 			<div class="panel-body">
 				<div class="tab-content">
 					
-					<div class="tab-pane active p-xxl" id="horizontal-form">
+					<div class="tab-pane p-xxl" id="monitoring">
 
 						<h3>Monitoring</h3>
 						<hr/>
@@ -78,10 +84,10 @@
 										<form class="grid-form">
 											<fieldset class="">
 												<legend>Was Adaptive Management Applied?</legend>
-												<div data-row-span="2">
+												<div data-row-span="1">
 													<div data-field-span="1">
-														<label>% Fine Particles</label>
-														<textarea type="text" rows="5" autofocus placeholder="20%"></textarea>
+														<label>Adaptive Management</label>
+														<textarea type="text" rows="5" autofocus placeholder="If so, describe the general approach and provide any performance specifications and decision points established if available."></textarea>
 													</div>
 												</div>
 											</fieldset>
@@ -90,19 +96,19 @@
 												<legend>Was a monitoring plan developed for the site?</legend>
 												<div data-row-span="1">
 													<div data-field-span="1">
-														<label>Limit</label>
-														<textarea type="text" rows="5" autofocus placeholder="20%"></textarea>
+														<label>Monitoring Plan</label>
+														<textarea type="text" rows="5" autofocus placeholder="yes"></textarea>
 													</div>
 												</div>
 											</fieldset>
 											<br/>
 
 											<fieldset class="">
-												<legend>What was the purpose/focuse of the monitoring?</legend>
+												<legend>What was the purpose/focuss of the monitoring?</legend>
 												<div data-row-span="1">
 													<div data-field-span="1">
-														<label>Soil Classification AASHTO</label>
-														<textarea type="text" rows="5" autofocus placeholder="20%"></textarea>
+														<label>Monitoring Focus</label>
+														<textarea type="text" rows="5" autofocus placeholder="Pre-construction, short-term and long-term (include same fields for each, except sediment physical characteristics and habitat units established are only under post-construction)"></textarea>
 													</div>
 												</div>
 											</fieldset>
@@ -112,8 +118,8 @@
 												<legend>Monitoring Specifics/Reports</legend>
 												<div data-row-span="1">
 													<div data-field-span="1">
-														<label>Water Content</label>
-														<textarea type="text" rows="5" autofocus placeholder="20%"></textarea>
+														<label>Monitoring Specifics</label>
+														<textarea type="text" rows="5" autofocus placeholder="Description"></textarea>
 													</div>
 												</div>
 											</fieldset>
@@ -122,7 +128,6 @@
 								</div>
 							</div>
 						</div>
-
 					</div>
 
 					<div class="tab-pane p-xxl" id="regulatory">
@@ -145,20 +150,20 @@
 										<form class="grid-form">
 											<fieldset class="">
 												<legend>Project Authorization</legend>
-												<div data-row-span="2">
+												<div data-row-span="1">
 													<div data-field-span="1">
-														<label>% Fine Particles</label>
-														<textarea type="text" rows="5" autofocus placeholder="20%"></textarea>
+														<label>Project Authorization</label>
+														<textarea type="text" rows="5" autofocus placeholder="Under what regulatory authority was the project executed (for example, Section 404 of the Clean Water Act, etc.)"></textarea>
 													</div>
 												</div>
 											</fieldset>
 											<br/>
 											<fieldset class="">
-												<legend>Regulatory Authorization</legend>
+												<legend>Regulatory Limitations</legend>
 												<div data-row-span="1">
 													<div data-field-span="1">
-														<label>Limit</label>
-														<textarea type="text" rows="5" autofocus placeholder="20%"></textarea>
+														<label>Regulatory Limitations</label>
+														<textarea type="text" rows="5" autofocus placeholder="Did the regulations applicable to the project require use of the 'least cost' placement alternative? Were there other significant regulatory limitations or requirements?"></textarea>
 													</div>
 												</div>
 											</fieldset>
@@ -169,32 +174,157 @@
 						</div>
 					</div>
 
-					<div class="tab-pane p-xxl" id="bordered-row">
+					<div class="tab-pane p-xxl active" id="construction">
 
-						<form class="grid-form">
-							<div class="row">
+
+						<h4>Construction Description</h4>
+						<hr/>
+						<p class="text-muted">
+							Please indicate total construction period, whether construction was continuous or phased, significant delays or interruptions, or other factors influencing the duration of construction.
+						</p>
+						<br/>
+						
+						<div class="row">
 							<div class="col-md-12">
-								<div class="panel panel-default" data-widget='{"draggable": "false"}'>
+								<div class="panel panel-primary" data-widget='{"draggable": "false"}'>
 									<div class="panel-heading">
-										<h2>Other Values</h2>
+										<h2>Duration of Construction</h2>
 										<div class="panel-ctrls" data-actions-container="" data-action-collapse='{"target": ".panel-body"}'></div>
 									</div>
 									<div class="panel-body">
 										<form class="grid-form">
-											<fieldset>
-											<legend>Other Values</legend>
-											<div data-row-span="8">
-												<div data-field-span="1">
-													<label>Site Water Type</label>
-													<input type="text" autofocus placeholder="20%">
+											<fieldset class="">
+												<legend>What was the duration of the construction phase?</legend>
+												<div data-row-span="2">
+													<div data-field-span="1">
+														<label>No.</label>
+														<input type="text" autofocus placeholder="2"></textarea>
+													</div>
+													<div data-field-span="1">
+														<label>Measure</label>
+														<input type="text" autofocus placeholder="years"></textarea>
+													</div>
 												</div>
-												<div data-field-span="1">
-													<label>Water Salinity</label>
-													<input type="text" autofocus placeholder="20%">
+											</fieldset>
+											<br/>
+											<fieldset class="">
+												<legend>Construction Phase Description</legend>
+												<div data-row-span="1">
+													<div data-field-span="1">
+														<label>Details Related to Construction</label>
+														<textarea type="text" rows="5" autofocus placeholder="Description..."></textarea>
+													</div>
 												</div>
+											</fieldset>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<h4>Construction Equipment</h4>
+						<hr/>
+						<p class="text-muted">
+							Describe the equipment (such as earthmoving equipment) used in construction of the site. It would be helpful to know what scale of equipment was needed (for example, cy of the dump trucks, size or reach of the backhoe, etc.)
+						</p>
+						<br/>
+						
+						<div class="row">
+							<div class="col-md-12">
+								<div class="panel panel-primary" data-widget='{"draggable": "false"}'>
+									<div class="panel-heading">
+										<h2>Construction Equipment</h2>
+										<div class="panel-ctrls" data-actions-container="" data-action-collapse='{"target": ".panel-body"}'></div>
+									</div>
+									<div class="panel-body">
+										<form class="grid-form">
+											<fieldset class="">
+												<legend>Construction Equipment</legend>
+												<div data-row-span="8">
+													<div data-field-span="2">
+														<label>Equipment</label>
+														<input type="text" autofocus placeholder="Hoe">
+													</div>
+													<div data-field-span="6">
+														<label>Purpose</label>
+														<textarea type="text" rows="5" autofocus placeholder="It would be helpful to know what scale of equipment was needed (for example, cy of the dump trucks, size or reach of the backhoe, etc.)"></textarea>
+													</div>
+												</div>
+											</fieldset>
+											<br/>
+											<fieldset class="">
+												<legend>Special Considerations or Challenges</legend>
+												<div data-row-span="1">
+													<div data-field-span="1">
+														<label>Special Considerations or Challenges</label>
+														<textarea type="text" rows="5" autofocus placeholder="Description..."></textarea>
+													</div>
+												</div>
+											</fieldset>
+											<br/>
+											<br/>
+											<fieldset class="">
+												<legend>Dredging Equipment and Size</legend>
+												<div data-row-span="3">
+													<div data-field-span="1">
+														<label>Dredge Type</label>
+														<input type="text" autofocus placeholder="Hydraulic">
+													</div>
+													<div data-field-span="1">
+														<label>Dredge Size</label>
+														<input type="text" autofocus placeholder="300">
+													</div>
+													<div data-field-span="1">
+														<label>Dredge Size Units</label>
+														<input type="text" autofocus placeholder="inches">
+													</div>	
+												</div>
+											</fieldset>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="tab-pane p-xxl" id="lessons">
+
+					<h3>Lessons Learned</h3>
+					<hr/>
+					<p class="lead text-muted">
+						Enter the average properties of the sediment here and upload data for individual data samples,<br/> composites, etc. either from your workstation or from SAGA
+					</p>
+					<br/>
+
+					
+
+					<h4>Share you lesson with other.</h4>
+					<hr/>
+					<p class="text-muted">
+						Enter the average properties of the sediment here and upload data for individual data samples,<br/> composites, etc. either from your workstation or from SAGA
+					</p>
+					<br/>
+
+
+					<div class="row">
+						<div class="col-md-12">
+							<div class="panel panel-primary" data-widget='{"draggable": "false"}'>
+								<div class="panel-heading">
+									<h2>Lessons</h2>
+									<div class="panel-ctrls" data-actions-container="" data-action-collapse='{"target": ".panel-body"}'></div>
+								</div>
+								<div class="panel-body">
+									<form class="grid-form">
+										<fieldset>
+											<legend>Lessons</legend>
+											<div data-row-span="4">
 												<div data-field-span="1">
-													<label>Unit</label>
-													<input type="text" autofocus placeholder="20%">
+													<label>Phase</label>
+													<input type="text" autofocus placeholder="Pre-Construction">
+												</div>
+												<div data-field-span="3">
+													<label>Description</label>
+													<textarea rows="10" type="text" autofocus placeholder="Tell us what you learned"></textarea>
 												</div>
 											</div>
 										</fieldset>
@@ -205,127 +335,20 @@
 											</div>
 										</div>
 									</form>
-									</div>
 								</div>
 							</div>
-							</div>
-						</form>
-
-								</div>
-						<div class="tab-pane" id="tabular-form">
-							<form class="form-horizontal">
-								<div class="form-group">
-									<label for="focusedinput" class="col-sm-2 control-label">Focused Input</label>
-									<div class="col-sm-8">
-										<input type="text" class="form-control" id="focusedinput" placeholder="Default Input">
-									</div>
-									<div class="col-sm-2">
-										<p class="help-block">Your help text!</p>
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="disabledinput" class="col-sm-2 control-label">Disabled Input</label>
-									<div class="col-sm-8">
-										<input disabled type="text" class="form-control" id="disabledinput" placeholder="Disabled Input">
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="inputPassword" class="col-sm-2 control-label">Password</label>
-									<div class="col-sm-8">
-										<input type="password" class="form-control" id="inputPassword" placeholder="Password">
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="checkbox" class="col-sm-2 control-label">Checkbox</label>
-									<div class="col-sm-8">
-										<div class="checkbox block"><label><input type="checkbox"> Unchecked</label></div>
-										<div class="checkbox block"><label><input type="checkbox" checked> Checked</label></div>
-										<div class="checkbox block"><label><input type="checkbox" disabled> Disabled Unchecked</label></div>
-										<div class="checkbox block"><label><input type="checkbox" disabled checked> Disabled Checked</label></div>
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="checkbox" class="col-sm-2 control-label">Checkbox Inline</label>
-									<div class="col-sm-8">
-										<div class="checkbox">
-											<label><input type="checkbox"> Unchecked</label>
-											<label><input type="checkbox" checked> Checked</label>
-											<label><input type="checkbox" disabled> Disabled Unchecked</label>
-											<label><input type="checkbox" disabled checked> Disabled Checked</label>
-											<label>
-										</div>
-
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="selector1" class="col-sm-2 control-label">Dropdown Select</label>
-									<div class="col-sm-8"><select name="selector1" id="selector1" class="form-control">
-										<option>Lorem ipsum dolor sit amet.</option>
-										<option>Dolore, ab unde modi est!</option>
-										<option>Illum, fuga minus sit eaque.</option>
-										<option>Consequatur ducimus maiores voluptatum minima.</option>
-									</select></div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-2 control-label">Multiple Select</label>
-									<div class="col-sm-8">
-										<select multiple="" class="form-control" class="form-control">
-											<option>Option 1</option>
-											<option>Option 2</option>
-											<option>Option 3</option>
-											<option>Option 4</option>
-											<option>Option 5</option>
-										</select>
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="txtarea1" class="col-sm-2 control-label">Textarea</label>
-									<div class="col-sm-8"><textarea name="txtarea1" id="txtarea1" cols="50" rows="4" class="form-control"></textarea></div>
-								</div>
-								<div class="form-group">
-									<label for="radio" class="col-sm-2 control-label">Radio</label>
-									<div class="col-sm-8">
-										<div class="radio block"><label><input type="radio"> Unchecked</label></div>
-										<div class="radio block"><label><input type="radio" checked> Checked</label></div>
-										<div class="radio block"><label><input type="radio" disabled> Disabled Unchecked</label></div>
-										<div class="radio block"><label><input type="radio" disabled checked> Disabled Checked</label></div>
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="radio" class="col-sm-2 control-label">Radio Inline</label>
-									<div class="col-sm-8">
-										<div class="radio">
-											<label><input type="radio"> Unchecked</label>
-											<label><input type="radio" checked> Checked</label>
-											<label><input type="radio" disabled> Disabled Unchecked</label>
-											<label><input type="radio" disabled checked> Disabled Checked</label>
-										</div>
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="smallinput" class="col-sm-2 control-label label-input-sm">Small Input</label>
-									<div class="col-sm-8">
-										<input type="text" class="form-control input-sm" id="smallinput" placeholder="Small Input">
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="mediuminput" class="col-sm-2 control-label">Medium Input</label>
-									<div class="col-sm-8">
-										<input type="text" class="form-control" id="mediuminput" placeholder="Medium Input">
-									</div>
-								</div>
-								<div class="form-group mb-n">
-									<label for="largeinput" class="col-sm-2 control-label label-input-lg">Large Input</label>
-									<div class="col-sm-8">
-										<input type="text" class="form-control input-lg" id="largeinput" placeholder="Large Input">
-									</div>
-								</div>
-							</form>
-						</div>	
+						</div>
 					</div>
+				</div>
+
+
+				<div class="tab-pane p-xxl" id="files">
+					
+				</div>
 				</div>
 			</div>
 		</div>
+	</div>
 
 <div class="col-md-2">
 	<div class="alert alert-info">
