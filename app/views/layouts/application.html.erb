@@ -6,13 +6,15 @@
 
     <title><%= content_for?(:title) ? yield(:title) : "TLP" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "TLP" %>">
+    <%= stylesheet_link_tag 'application', media: "all", 'data-turbolinks-track' => true %>
+    <%= render 'layouts/css' %>
+    <%= javascript_include_tag 'application', media: "all",  'data-turbolinks-track' => true %>
+    <%= render 'layouts/js' %>
     
-    <%= stylesheet_link_tag 'application', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application',  'data-turbolinks-track' => true %>
 
     <%= csrf_meta_tags %>
 
-    <%= render 'layouts/css' %>
+    
 
   </head>
 
@@ -33,7 +35,7 @@
             <div class="page-content">
               
               <%= yield %>
-              <%= render 'layouts/js' %>
+              
               
             </div>
           </div>
