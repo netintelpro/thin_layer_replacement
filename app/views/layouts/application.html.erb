@@ -11,12 +11,25 @@
     <%= javascript_include_tag 'application',  media: 'all', 'data-turbolinks-track' => true %>
 
     <%= csrf_meta_tags %>
+
+    <link rel="shortcut icon" href="assets/img/logo-icon-dark.png">
+
+    <link type='text/css' href='http://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500' rel='stylesheet'>
+    <link type='text/css'  href="https://fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet"> 
+
+    <link href="assets/fonts/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">        <!-- Font Awesome -->
+    <link href="assets/css/styles.css" type="text/css" rel="stylesheet">                                     <!-- Core CSS with all styles -->
+
+    <link href="assets/plugins/codeprettifier/prettify.css" type="text/css" rel="stylesheet">                <!-- Code Prettifier -->
+
+    <link href="assets/plugins/dropdown.js/jquery.dropdown.css" type="text/css" rel="stylesheet">            <!-- iCheck -->
+    <link href="assets/plugins/progress-skylo/skylo.css" type="text/css" rel="stylesheet">            
   </head>
 
     
   <body class="animated-content infobar-overlay">
 
-    <%= render 'layouts/css' %>
+    <%#= render 'layouts/css' %>
     
     <%= render 'layouts/top_nav' %>
   
@@ -28,12 +41,59 @@
             <%= render 'layouts/messages' %>
             <div class="page-content">
               <%= yield %>
-              <%= render 'layouts/js' %>
+              <%#= render 'layouts/js' %>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+
+
+    <!-- /Switcher -->
+        <!-- Load site level scripts -->
+
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script> -->
+
+    <script src="assets/js/jquery-1.10.2.min.js"></script>              <!-- Load jQuery -->
+    <script src="assets/js/jqueryui-1.10.3.min.js"></script>              <!-- Load jQueryUI -->
+    <script src="assets/js/bootstrap.min.js"></script>                <!-- Load Bootstrap -->
+    <script src="assets/js/enquire.min.js"></script>                  <!-- Load Enquire -->
+
+    <script src="assets/plugins/velocityjs/velocity.min.js"></script>         <!-- Load Velocity for Animated Content -->
+    <script src="assets/plugins/velocityjs/velocity.ui.min.js"></script>
+
+    <script src="assets/plugins/progress-skylo/skylo.js"></script>    <!-- Skylo -->
+
+    <script src="assets/plugins/wijets/wijets.js"></script>                 <!-- Wijet -->
+
+    <script src="assets/plugins/sparklines/jquery.sparklines.min.js"></script>       <!-- Sparkline -->
+
+    <script src="assets/plugins/codeprettifier/prettify.js"></script>         <!-- Code Prettifier  -->
+
+    <script src="assets/plugins/bootstrap-tabdrop/js/bootstrap-tabdrop.js"></script>  <!-- Bootstrap Tabdrop -->
+
+    <script src="assets/plugins/nanoScroller/js/jquery.nanoscroller.min.js"></script> <!-- nano scroller -->
+
+    <script src="assets/plugins/dropdown.js/jquery.dropdown.js"></script> <!-- Fancy Dropdowns -->
+    <script src="assets/plugins/bootstrap-material-design/js/material.min.js"></script> <!-- Bootstrap Material -->
+    <script src="assets/plugins/bootstrap-material-design/js/ripples.min.js"></script> <!-- Bootstrap Material -->
+
+    <script src="assets/js/application.js"></script>
+    <script src="assets/demo/demo.js"></script>
+    <script src="assets/demo/demo-switcher.js"></script>
+
+    <!-- End loading site level scripts -->
+        
+        <!-- Load page level scripts-->
+        
+    <script src="assets/plugins/form-validation/jquery.validate.min.js"></script>           <!-- Validate Plugin -->
+    <script src="assets/plugins/form-stepy/jquery.stepy.js"></script>                 <!-- Stepy Plugin -->
+
+    <script src="assets/demo/demo-formwizard.js"></script>
+
+        <!-- End loading page level scripts-->
 
 
 
