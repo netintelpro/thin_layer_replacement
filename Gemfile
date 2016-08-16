@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.3'
+#ruby '2.2.3'
 gem 'rails', '4.2.5'
 gem 'pg'
 #gem 'sqlite3'
@@ -16,7 +16,7 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
-gem 'devise'
+#gem 'devise'
 gem 'high_voltage'
 group :development do
   gem 'better_errors'

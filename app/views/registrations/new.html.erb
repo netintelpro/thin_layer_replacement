@@ -1,0 +1,13 @@
+<h1>Sign Up</h1>
+
+<ul>
+  <% @user.errors.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+</ul>
+
+<%= form_for '', :url => '/registrations', :html => {:method => :post} do |f| %>
+  <label>Email:</label> <input type="email" name="user[email]"> <br /><br />
+  <label>Password:</label> <input type="password" name="user[password]"> <br /><br />
+  <input type="submit" value="Sign Up">
+<% end %>

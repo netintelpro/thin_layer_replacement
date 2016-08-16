@@ -1,28 +1,28 @@
-class RegistrationsController < Devise::RegistrationsController
-  
+class RegistrationsController < ApplicationController
+
+  def new
+    @user = User.new
+    render :layout => false
+  end
+
+  def create
+    @user = User.new(params[:user])
+    if @user.save(@user.attributes.reject!{|attr| attr == :errors || attr == :role})
+      session[:user] = {}
+      session[:user][:email] = @user.email
+      redirect_to root_url, notice: "Registration successful."
+    else
+      render "new", :layout => false
+    end
+  end
+
  	private
-
- 	def sign_up_params
-   		params.require(:user).permit(:name, :email,:password, :password_confirmation, )
- 	end
-
- 	def account_update_params
-   		params.require(:user).permit(: :name, :email,:password, :password_confirmation, :current_password)
+ 	def user_params
+   		params.require(:user).permit(:name, :email,:password, :password_confirmation, :current_password)
  	end
 
  	def edit
    		render layout: "application"
  	end
-
-
- 	#protected
-	#def after_sign_up_path_for(resource)
-		#after_signup_path(:location)
-	#end
-
-	#def after_update_path_for(resource)
-		#after_signup_path(:location)
-	#end
-	
 end
 

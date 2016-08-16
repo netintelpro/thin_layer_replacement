@@ -68,7 +68,7 @@
   					<li class="nav-separator"><span>Case Studies</span></li>
             <% if user_signed_in? %>
               <li>
-                <%= link_to edit_user_registration_path, class: "withripple"  do %>
+                <%= link_to "", class: "withripple"  do %>
                   <span class="icon">
                     <i class="material-icons">dashboard</i>
                   </span>
@@ -85,24 +85,25 @@
               </li>
               <li class="nav-separator"><span>my account</span></li>
               <li>
-                <%= link_to edit_user_registration_path, class: "withripple"  do %>
-                  <span class="icon">
-                    <i class="material-icons">settings</i>
-                  </span>
-                  <span>Edit Profile</span>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to destroy_user_session_path, :method=>'delete' do %>
+                <%= link_to logout_path, :method=>'delete' do %>
                   <span class="icon">
                     <i class="material-icons">data_usage</i>
                   </span>
                   <span>Logout</span>
                 <% end %>
               </li>
+              <li>
+                <%= link_to "", class: "withripple"  do %>
+                  <span class="icon">
+                    <i class="material-icons">settings</i>
+                  </span>
+                  <span>Edit Profile</span>
+                <% end %>
+              </li>
+
             <% else %>
               <li>
-                <%= link_to new_user_session_path do %>
+                <%= link_to "/sessions/new" do %>
                   <span class="icon">
                     <i class="material-icons">logout</i>
                   </span>
@@ -110,7 +111,7 @@
                 <% end %>
               </li>
               <li>
-                <%= link_to new_user_registration_path do %>
+                <%= link_to "/registrations/new" do %>
                   <span class="icon">
                     <i class="material-icons">door</i>
                   </span>

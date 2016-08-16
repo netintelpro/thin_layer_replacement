@@ -1,0 +1,7 @@
+<h1>Sign In</h1>
+
+<%= form_for '', :url => '/sessions', :html => {:method => :post} do |f| %>
+  <label>Email:</label> <input type="email" name="session[email]"> <br /><br />
+  <label>Password:</label> <input type="password" name="session[password]"> <br /><br />
+  <input type="submit" value="Sign IN">
+<% end %>

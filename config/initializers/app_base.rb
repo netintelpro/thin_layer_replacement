@@ -1,0 +1,1 @@
+USER_DATA_PATH = "/home/barek/projects/thin-layer-replacement/db/data/users.yml"

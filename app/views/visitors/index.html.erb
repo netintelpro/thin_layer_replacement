@@ -6,7 +6,7 @@
             <li class="active"><a href="index.html">Dashboard</a></li>
           </ol>
           <div class="page-heading">            
-            <h1>Welcome<small><%= link_to 'Users:', users_path %> <%= User.count %> registered</small></h1>
+            <h1>Welcome <%= session[:user]["email"] if session[:user].present? && session[:user]["email"].present? %></h1>
           </div>
         </div>
 
