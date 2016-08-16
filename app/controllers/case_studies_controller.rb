@@ -1,10 +1,10 @@
 class CaseStudiesController < ApplicationController
-  before_action :set_case_study, only: [:show, :edit, :update, :destroy]
+  #before_action :set_case_study, only: [:show, :edit, :update, :destroy]
 
   # GET /case_studies
   # GET /case_studies.json
   def index
-    @case_studies = CaseStudy.all
+    @case_studies = []
   end
 
   # GET /case_studies/1
@@ -15,7 +15,7 @@ class CaseStudiesController < ApplicationController
   # GET /case_studies/new
   def new
     @case_study = CaseStudy.new
-    @user = User.all
+    @user = []
   end
 
   # GET /case_studies/1/edit
@@ -25,17 +25,13 @@ class CaseStudiesController < ApplicationController
   # POST /case_studies
   # POST /case_studies.json
   def create
-    @case_study = CaseStudy.new(case_study_params)
-
-    respond_to do |format|
-      if @case_study.save
-        format.html { redirect_to @case_study, notice: 'Case study was successfully created.' }
-        format.json { render :show, status: :created, location: @case_study }
-      else
-        format.html { render :new }
-        format.json { render json: @case_study.errors, status: :unprocessable_entity }
-      end
+    @case_study = CaseStudy.new(params[:case_study])
+    if @case_study.save(@case_study.attributes)
+      redirect_to root_url, notice: "New Case Study saved successfully."
+    else
+      render "new"
     end
+
   end
 
   # PATCH/PUT /case_studies/1
