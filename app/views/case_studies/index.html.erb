@@ -90,6 +90,7 @@
           </div>
           <div class="col-md-9">
             <% @case_studies.each do |case_study| %>
+              <% case_study = CaseStudy.new(case_study) %>
               <div class="col-md-4">
               <div class="card profile-card">
                 <div class="card-content">
@@ -135,13 +136,13 @@
                         <%= case_study.country %>
 
                         
-                        <%= link_to 'Show', case_study, class: "btn btn-primary" %>
-                        <%= link_to 'Destroy', case_study, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %>
+                        <%= link_to 'Show', case_study_path(:id => case_study.id), class: "btn btn-primary" %>
+                        <%= link_to 'Destroy', case_study_path(:id => case_study.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %>
 
         
                       </tbody>
                     </table>
-                    <%= link_to edit_case_study_path(case_study), class: "btn btn-primary btn-fab" do %>
+                    <%= link_to edit_case_study_path(:id => case_study.id), class: "btn btn-primary btn-fab" do %>
                       <i class="material-icons">settings</i>
                     <% end %>
                   </div>

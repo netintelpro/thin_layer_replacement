@@ -95,5 +95,5 @@
   <%= @case_study.integer %>
 </p>
 
-<%= link_to 'Edit', edit_case_study_path(@case_study) %> |
+<%= link_to 'Edit', edit_case_study_path(:id => @case_study.id) %> |
 <%= link_to 'Back', case_studies_path %>

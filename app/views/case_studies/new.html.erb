@@ -19,7 +19,7 @@
                 </div>
                 <div class="panel-body">
                   <div class="p-xxl" id="horizontal-form">
-                    <%= render "form" %>
+                    <%= render "form", :case_study => CaseStudy.new , :url => case_studies_path, :method => :post %>
                   </div>
                 </div>
               </div>

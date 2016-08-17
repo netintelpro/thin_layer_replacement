@@ -4,12 +4,13 @@ class CaseStudiesController < ApplicationController
   # GET /case_studies
   # GET /case_studies.json
   def index
-    @case_studies = []
+    @case_studies = YAML::load(File.open(CASE_STUDY_DATA_PATH)) || []
   end
 
   # GET /case_studies/1
   # GET /case_studies/1.json
   def show
+    @case_study = CaseStudy.find(params[:id])
   end
 
   # GET /case_studies/new
@@ -20,6 +21,7 @@ class CaseStudiesController < ApplicationController
 
   # GET /case_studies/1/edit
   def edit
+    @case_study = CaseStudy.find(params[:id])
   end
 
   # POST /case_studies
@@ -38,8 +40,8 @@ class CaseStudiesController < ApplicationController
   # PATCH/PUT /case_studies/1.json
   def update
     respond_to do |format|
-      if @case_study.update(case_study_params)
-        format.html { redirect_to @case_study, notice: 'Case study was successfully updated.' }
+      if CaseStudy.update(params[:id],case_study_params)
+        format.html { redirect_to case_study_url(:id => params[:id]), notice: 'Case study was successfully updated.' }
         format.json { render :show, status: :ok, location: @case_study }
       else
         format.html { render :edit }
@@ -51,7 +53,7 @@ class CaseStudiesController < ApplicationController
   # DELETE /case_studies/1
   # DELETE /case_studies/1.json
   def destroy
-    @case_study.destroy
+    CaseStudy.destroy(params[:id])
     respond_to do |format|
       format.html { redirect_to case_studies_url, notice: 'Case study was successfully destroyed.' }
       format.json { head :no_content }

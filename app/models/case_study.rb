@@ -22,12 +22,13 @@ class CaseStudy < Base
     self.project_area_uom_id = case_study_hash[:project_area_uom_id]
     self.case_study_pk = case_study_hash[:case_study_pk]
     self.integer = case_study_hash[:integer]
+    self.id = case_study_hash[:id]
   end
 
   def save(case_study_hash={})
     case_study_hash_data = YAML::load(File.open(CASE_STUDY_DATA_PATH))
     case_study_hash_data = [] unless case_study_hash_data
-    case_study_hash[:id] = case_study_hash_data.collect{|data| data[:id]}.compact.max.to_i + 1
+    case_study_hash[:id] = case_study_hash_data.collect{|data| data[:id].to_i}.compact.max.to_i + 1
 
     case_study_hash_data = case_study_hash_data + [case_study_hash]
 
@@ -35,6 +36,43 @@ class CaseStudy < Base
       file.write case_study_hash_data.compact.to_yaml
     end
     return true
+  end
+
+  def self.find(id)
+    hashes = YAML::load(File.open(CASE_STUDY_DATA_PATH)) || []
+    found = nil
+    hashes.each do |hash|
+      if hash[:id].to_i == id.to_i
+        found = CaseStudy.new(hash)
+        break
+      end
+    end
+    found
+  end
+
+  def self.update(id, case_study_hash)
+    hashes = YAML::load(File.open(CASE_STUDY_DATA_PATH)) || []
+    new_hashes = []
+    hashes.each do |hash|
+      if hash[:id].to_i == id.to_i
+        hash = case_study_hash.merge!(:id => id.to_s)
+      end
+      new_hashes = new_hashes +[hash]
+    end
+    File.open(CASE_STUDY_DATA_PATH, "w") do |file|
+      file.write new_hashes.compact.to_yaml
+    end
+    true
+  end
+
+  def self.destroy(id)
+    case_studies = YAML::load(File.open(CASE_STUDY_DATA_PATH)) || []
+    case_studies.reject! {|case_study| case_study[:id].to_i == id.to_i }
+
+    File.open(CASE_STUDY_DATA_PATH, "w") do |file|
+      file.write case_studies.compact.to_yaml
+    end
+    true
   end
 
 
