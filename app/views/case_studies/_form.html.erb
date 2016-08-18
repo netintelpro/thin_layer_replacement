@@ -1,4 +1,4 @@
-<%= form_for case_study, :url => url, :html => {:class => 'grid-form', :method => method} do |f| %>
+<%= form_for case_study, :url => url, :html => {:multipart => true, :class => 'grid-form', :method => method} do |f| %>
 
   <% if @case_study.errors.any? %>
     <div id="error_explanation">
@@ -117,4 +117,14 @@
       <button class="btn-default btn">Cancel</button>
     </div>
   </div>
+
+  <fieldset>
+    <legend>Photos</legend>
+    <% 3.times do |i| %>
+      <div>
+        <label>Photo <%= i+1 %></label> <input type="file" name="photos[]">
+      </div>
+    <% end %>
+  </fieldset>
+
 <% end %>

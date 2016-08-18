@@ -1,3 +1,4 @@
+require 'csv'
 class CaseStudiesController < ApplicationController
   #before_action :set_case_study, only: [:show, :edit, :update, :destroy]
 
@@ -5,6 +6,11 @@ class CaseStudiesController < ApplicationController
   # GET /case_studies.json
   def index
     @case_studies = YAML::load(File.open(CASE_STUDY_DATA_PATH)) || []
+    respond_to do |format|
+      format.html { }
+      format.csv { send_data CaseStudy.to_csv }
+    end
+
   end
 
   # GET /case_studies/1
@@ -28,7 +34,9 @@ class CaseStudiesController < ApplicationController
   # POST /case_studies.json
   def create
     @case_study = CaseStudy.new(params[:case_study])
-    if @case_study.save(@case_study.attributes)
+    @case_study = CaseStudy.save(@case_study.attributes)
+    if @case_study
+      @case_study.upload_photos(params[:photos])
       redirect_to root_url, notice: "New Case Study saved successfully."
     else
       render "new"

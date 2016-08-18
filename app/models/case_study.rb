@@ -1,5 +1,10 @@
+require "#{BASE_PATH}/app/uploaders/image_uploader"
+
 class CaseStudy < Base
   include ActiveModel::Model
+  extend CarrierWave::Mount
+  mount_uploader :image, ImageUploader
+
   attr_accessor :id, :user_id, :placement_event_id, :project_name, :project_desc, :project_type_id, :project_type_other, :country, :region, :county, :city, :district_id, :saga_id, :survey_status_id, :survey_create_date, :survey_update_date, :project_area, :project_area_uom_id, :case_study_pk, :integer
 
   def initialize(case_study_hash={})
@@ -25,21 +30,27 @@ class CaseStudy < Base
     self.id = case_study_hash[:id]
   end
 
-  def save(case_study_hash={})
-    case_study_hash_data = YAML::load(File.open(CASE_STUDY_DATA_PATH))
-    case_study_hash_data = [] unless case_study_hash_data
+  def upload_photos(photos)
+    photos.compact.each do |photo|
+      if photo
+        self.image = File.open(photo.path)
+        self.store_image!
+      end
+    end
+  end
+
+  def self.save(case_study_hash={})
+    case_study_hash_data = CaseStudy.all
     case_study_hash[:id] = case_study_hash_data.collect{|data| data[:id].to_i}.compact.max.to_i + 1
 
     case_study_hash_data = case_study_hash_data + [case_study_hash]
 
-    File.open(CASE_STUDY_DATA_PATH, "w") do |file|
-      file.write case_study_hash_data.compact.to_yaml
-    end
-    return true
+    write_in_yml(case_study_hash_data)
+    return CaseStudy.new(case_study_hash)
   end
 
   def self.find(id)
-    hashes = YAML::load(File.open(CASE_STUDY_DATA_PATH)) || []
+    hashes = all
     found = nil
     hashes.each do |hash|
       if hash[:id].to_i == id.to_i
@@ -51,7 +62,7 @@ class CaseStudy < Base
   end
 
   def self.update(id, case_study_hash)
-    hashes = YAML::load(File.open(CASE_STUDY_DATA_PATH)) || []
+    hashes = all
     new_hashes = []
     hashes.each do |hash|
       if hash[:id].to_i == id.to_i
@@ -59,20 +70,35 @@ class CaseStudy < Base
       end
       new_hashes = new_hashes +[hash]
     end
-    File.open(CASE_STUDY_DATA_PATH, "w") do |file|
-      file.write new_hashes.compact.to_yaml
-    end
+    write_in_yml(new_hashes)
     true
   end
 
   def self.destroy(id)
-    case_studies = YAML::load(File.open(CASE_STUDY_DATA_PATH)) || []
+    case_studies = all
     case_studies.reject! {|case_study| case_study[:id].to_i == id.to_i }
-
-    File.open(CASE_STUDY_DATA_PATH, "w") do |file|
-      file.write case_studies.compact.to_yaml
-    end
+    write_in_yml(case_studies)
     true
+  end
+
+  def self.all
+    YAML::load(File.open(CASE_STUDY_DATA_PATH)) || []
+  end
+
+  def self.to_csv(options = {})
+    CSV.generate(options) do |csv|
+      csv << CaseStudy.new.attributes.keys
+      all.each do |case_study|
+        csv << case_study.values
+      end
+    end
+  end
+
+  private
+  def self.write_in_yml(hash)
+    File.open(CASE_STUDY_DATA_PATH, "w") do |file|
+      file.write hash.compact.to_yaml
+    end
   end
 
 
