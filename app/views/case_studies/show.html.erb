@@ -95,5 +95,19 @@
   <%= @case_study.integer %>
 </p>
 
+<p>
+  Editors: <%= @case_study.editors.map(&:email).join(", ") %>
+</p>
+<p>
+  Authors: <%= @case_study.authors.map(&:email).join(", ") %>
+</p>
+<p>
+  <% @case_study.photos.each do |photo| %>
+    <%= link_to photo.image.url, :target => "_blank" do %>
+      <%= image_tag photo.image.url, :style => "width: 100px;height: 90px;" %>
+    <% end %>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_case_study_path(@case_study) %> |
 <%= link_to 'Back', case_studies_path %>
