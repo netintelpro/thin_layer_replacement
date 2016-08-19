@@ -1,8 +1,10 @@
 default: &default
-  adapter: sqlite3
-  pool: 10
+  adapter: postgresql
+  pool: 5
   timeout: 5000
+  username: barek
+  password: barek
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  database: thin_layer_replacement_development
