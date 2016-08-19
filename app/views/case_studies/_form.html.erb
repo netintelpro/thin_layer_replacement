@@ -1,4 +1,4 @@
-<%= form_for(@case_study, :html => {:class => 'grid-form'}) do |f| %>
+<%= nested_form_for(@case_study, :html => {:class => 'grid-form', :multipart => true}) do |f| %>
 
   <% if @case_study.errors.any? %>
     <div id="error_explanation">
@@ -21,11 +21,7 @@
     <legend>ID</legend>
     <div data-row-span="5">
       <div data-field-span="1">
-        <labelu>User ID</label>
-        <%= f.number_field :user_id, class: "form-control" %>
-      </div>
-      <div data-field-span="1">
-        <labelu>Placement ID</label>
+        <label>Placement ID</label>
         <%= f.number_field :placement_event_id, class: "form-control" %>
       </div>
     </div>
@@ -117,4 +113,31 @@
       <button class="btn-default btn">Cancel</button>
     </div>
   </div>
+
+  <fieldset>
+    <legend>Editors</legend>
+    <%= f.collection_select :editor_ids, User.all, :id, :email, {}, {:multiple => true} %>
+  </fieldset>
+
+  <fieldset>
+    <legend>Authors</legend>
+    <%= f.collection_select :author_ids, User.all, :id, :email, {}, {:multiple => true} %>
+  </fieldset>
+
+  <fieldset>
+    <legend>Photos</legend>
+    <%= f.fields_for :photos do |photo_form| %>
+      <% if photo_form.object.image.present? %>
+        <p>
+          <%= link_to photo_form.object.image.url, :target => "_blank" do %>
+            <%= image_tag photo_form.object.image.url, :style => "width: 100px;height: 90px;" %>
+          <% end %>
+        </p>
+      <% end %>
+      <%= photo_form.file_field :image %>
+      <%= photo_form.link_to_remove "Remove this Photo" %>
+    <% end %>
+    <p><%= f.link_to_add "Add Photo", :photos %></p>
+  </fieldset>
+
 <% end %>
