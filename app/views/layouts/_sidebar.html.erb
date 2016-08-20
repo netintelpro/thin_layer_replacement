@@ -5,7 +5,8 @@
     		<div class="widget-body">
         	<div class="userinfo ">
             <div class="avatar pull-left">
-              <img src="assets/demo/avatar/avatar_15.png" class="img-responsive img-circle"> 
+              <% avatar_url = (user_signed_in? && current_user.avatar.present?) ? current_user.avatar.url : "assets/demo/avatar/avatar_15.png" %>
+              <%= image_tag avatar_url, :class => "img-responsive img-circle" %>
             </div>
 
             <% if user_signed_in? %>
