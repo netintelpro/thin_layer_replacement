@@ -6,6 +6,12 @@ class CaseStudy < ActiveRecord::Base
   has_many :photos
   accepts_nested_attributes_for :photos, allow_destroy: true, :reject_if => proc { |photo| photo['image'].blank? }
 
+  has_many :documents
+  accepts_nested_attributes_for :documents, allow_destroy: true, :reject_if => proc { |document| document['doc'].blank? }
+
+  has_many :videos
+  accepts_nested_attributes_for :videos, allow_destroy: true, :reject_if => proc { |video| video['link'].blank?  }
+
   def editors
     User.where(:id => self.editor_ids)
   end

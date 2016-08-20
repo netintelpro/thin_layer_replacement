@@ -140,4 +140,41 @@
     <p><%= f.link_to_add "Add Photo", :photos %></p>
   </fieldset>
 
+
+  <fieldset>
+    <legend>Documents</legend>
+    <%= f.fields_for :documents do |document_form| %>
+      <% if document_form.object.doc.present? %>
+        <p>
+          <%= link_to document_form.object.doc.file.filename, document_form.object.doc.url, :target => "_blank"  %>
+        </p>
+      <% end %>
+      <%= document_form.file_field :doc %>
+      <%= document_form.link_to_remove "Remove Doc" %>
+    <% end %>
+    <p><%= f.link_to_add "Add Document", :documents %></p>
+  </fieldset>
+
+
+  <fieldset>
+    <legend>Videos</legend>
+    <%= f.fields_for :videos do |video_form| %>
+      <% if video_form.object.link.present? %>
+        <p>
+          <%= video_form.object.title  %>
+        </p>
+      <% end %>
+      <%= video_form.text_field :title, :placeholder => "Title" %>
+
+      <%= video_form.text_field :link, :placeholder => "Link" %>
+
+      <%= video_form.text_area :description, :placeholder => "Description" %>
+
+      <%= video_form.text_area :tags, :placeholder => "Tags" %>
+
+      <%= video_form.link_to_remove "Remove Video" %>
+    <% end %>
+    <p><%= f.link_to_add "Add Video", :videos %></p>
+  </fieldset>
+
 <% end %>

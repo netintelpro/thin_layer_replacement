@@ -109,5 +109,26 @@
   <% end %>
 </p>
 
+<p>
+  <h5>Documents:</h5>
+  <% @case_study.documents.each do |document| %>
+    <% if document.doc.present? %>
+      <%= link_to document.doc.file.filename, document.doc.url, :target => "_blank" %>&nbsp;&nbsp;
+    <% end %>
+  <% end %>
+</p>
+
+<p>
+<h5>Videos:</h5>
+<% @case_study.videos.each do |video| %>
+  <% if video.present? %>
+    <label>Title:</label> <label><%= video.title %></label> <br />
+    <label>Link:</label> <label><%= video.link %></label> <br />
+    <label>Description:</label> <label><%= video.description %></label> <br />
+    <label>Tags:</label> <label><%= video.tags %></label> <br />
+  <% end %>
+<% end %>
+</p>
+
 <%= link_to 'Edit', edit_case_study_path(@case_study) %> |
 <%= link_to 'Back', case_studies_path %>
