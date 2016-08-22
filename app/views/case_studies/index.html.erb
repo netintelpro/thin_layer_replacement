@@ -33,6 +33,13 @@
       </div>
       <div class="container-fluid">
         <div class="row">
+          <div class="col-md-12">
+            <%= form_for '', :url => import_case_studies_url, :html => {:method => :post, :multipart => true} do |f| %>
+              <input type="file" name="file"> <input type="submit" value="Upload">
+            <% end %>
+          </div>
+        </div>
+        <div class="row">
           <div class="col-md-3">
             <div class="col-md-12">
               <div class="panel panel-default ov-h" data-widget='{"draggable": "false"}'>

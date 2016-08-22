@@ -11,6 +11,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'carrierwave'
 gem "nested_form"
+gem 'roo', '~> 2.4.0'
 group :development, :test do
   gem 'byebug'
 end
