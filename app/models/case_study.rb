@@ -54,6 +54,7 @@ class CaseStudy < ActiveRecord::Base
       when ".xls" then Roo::Excel.new(file.path, packed: false, file_warning: :ignore)
       when ".xlsx" then Roo::Excelx.new(file.path, packed: false, file_warning: :ignore)
       else raise "Unknown file type: #{file.original_filename}"
+
     end
   end
 
