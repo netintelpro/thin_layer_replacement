@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'carrierwave'
 gem "nested_form"
 gem 'roo', '~> 2.4.0'
+gem 'roo-xls'
 group :development, :test do
   gem 'byebug'
 end
