@@ -1,33 +1,0 @@
-{:uriI"Ãfile:///Users/khadijahcoakley/FS%20Ventures/repos/thin-layer-replacement/app/assets/fonts/elegant-icons/bower.json?type=application/json&id=fc49b04df50446b2e79b01ddc4362618b9c69540053ef7e4e145e90c05b4b88c:ET:load_pathI"app/assets/fonts;T:filenameI".app/assets/fonts/elegant-icons/bower.json;T:	nameI"elegant-icons/bower;T:logical_pathI"elegant-icons/bower.json;T:content_typeI"application/json;T:sourceI"»{
-  "name": "elegant-icons",
-  "version": "1.0.0",
-  "authors": [
-    "Elegant Themes"
-  ],
-  "description": "Elegant Themes' Elegant Icon font as a bower package",
-  "main": [
-  "./css/style.css",
-  "./fonts/*"
-  ],
-  "keywords": [
-    "elegant",
-    "icon"
-  ],
-  "license": [
-    "MIT",
-    "GPL2.0"
-  ],
-  "homepage": "http://www.elegantthemes.com/",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ]
-}
-;T:metadata{	:dependencieso:Set:
-@hash{
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"~file-digest:///Users/khadijahcoakley/FS%20Ventures/repos/thin-layer-replacement/app/assets/fonts/elegant-icons/bower.json;TT:charsetI"
-utf-8;F:digest"%‚Æ19≈Â}j∂•‘ÇÔSGè'Ø°ai“˜≤Esôë∑:lengthi»:dependencies_digest"%€"†ï•ÈÍDy\wˆπªÅWMÀàã;ß#”uv Ï•Ì:idI"Efc49b04df50446b2e79b01ddc4362618b9c69540053ef7e4e145e90c05b4b88c;F:
-mtimel+tëéW
