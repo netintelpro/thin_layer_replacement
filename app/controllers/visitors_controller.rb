@@ -1,5 +1,5 @@
 class VisitorsController < ApplicationController
 
-	layout "application"
+	layout "registrations"
 	
 end
