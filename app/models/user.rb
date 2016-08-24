@@ -22,6 +22,14 @@ class User < ActiveRecord::Base
       user.remote_avatar_url = data["image"]
       user.password = SecureRandom.base64(5)
       user.password_confirmation = user.password
+
+      user.headline = data["headline"]
+      user.description = data["description"]
+      user.phone = data["phone"]
+      user.location = data["location"]
+      user.industry = data["industry"]
+      user.public_profile = data.urls.public_profile rescue nil
+
       user.save(:validate => false)
     end
     return user
