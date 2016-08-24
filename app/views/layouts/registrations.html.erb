@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%= render 'layouts/head' %>
+    <%#= render 'layouts/head' %>
     <%= render 'layouts/css' %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Rails Devise Roles" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Thin Layer Placement" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Rails Devise Roles" %>">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application',  media: 'all', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
   
-  <body class="focused-form animated-content" style="background: url(https://usresponserestoration.files.wordpress.com/2015/06/duwamish-boeing-restoration-site_2015-6-19_noaa.jpg);">
+  <body class="focused-form animated-content" style="background: url(<%= image_url("background.png")%>); background-size: cover;">
+    <div class="overlay"></div>
         
     <%#= render 'layouts/navigation' %>
     <%= render 'layouts/messages' %>
-    <%#= render 'layouts/top_nav' %>
+    <%= render 'layouts/top_nav' %>
 
     <%= yield %>
 

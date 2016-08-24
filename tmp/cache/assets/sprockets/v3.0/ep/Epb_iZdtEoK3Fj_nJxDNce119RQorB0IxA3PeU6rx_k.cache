@@ -1,23 +1,0 @@
-{:uriI"Ëfile:///Users/khadijahcoakley/FS%20Ventures/repos/thin-layer-replacement/app/assets/fonts/ionicons/component.json?type=application/json&id=66fb469489d7fe29cc4d46eef15a083125999c7e0b52b1ba1b5052694c17f1b6:ET:load_pathI"app/assets/fonts;T:filenameI"-app/assets/fonts/ionicons/component.json;T:	nameI"ionicons/component;T:logical_pathI"ionicons/component.json;T:content_typeI"application/json;T:sourceI"­{
-    "repo": "driftyco/ionicons",
-    "development": {},
-    "version": "2.0.0",
-    "styles": [
-        "css/ionicons.css"
-    ],
-    "name": "Ionicons",
-    "dependencies": {},
-    "keywords": [],
-    "license": "MIT",
-    "fonts": [
-        "fonts/ionicons.eot",
-        "fonts/ionicons.svg",
-        "fonts/ionicons.ttf",
-        "fonts/ionicons.woff"
-    ],
-    "description": "The premium icon font for Ionic Framework."
-};T:metadata{	:dependencieso:Set:
-@hash{
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"}file-digest:///Users/khadijahcoakley/FS%20Ventures/repos/thin-layer-replacement/app/assets/fonts/ionicons/component.json;TT:charsetI"
-utf-8;F:digest"%šróÕþ	SÕõ7e ëë‰J\ ¦>YaO¢>‡):lengthi­:dependencies_digest"%ñëüß>F¹òyr¼“£Y`Y9Ðpñqr#+ƒèz:idI"E66fb469489d7fe29cc4d46eef15a083125999c7e0b52b1ba1b5052694c17f1b6;F:
-mtimel+t‘ŽW
