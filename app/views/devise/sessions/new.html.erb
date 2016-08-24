@@ -28,6 +28,7 @@
               <%= link_to "Forgot password?", new_password_path(resource_name), class: 'right' %>
             <% end -%>
             <%= f.submit 'Sign in', :class => 'btn btn-primary' %>
+            <%= link_to "Login With Linkedin", user_linkedin_omniauth_authorize_path, class: "btn btn-block btn-rounded btn-white" %>
             <% if devise_mapping.rememberable? -%>
               <div class="checkbox" style="width:150px">
                 <label>
