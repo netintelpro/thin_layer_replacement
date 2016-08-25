@@ -4,9 +4,12 @@ class CaseStudiesController < ApplicationController
   # GET /case_studies
   # GET /case_studies.json
   def index
-    @case_studies = CaseStudy.all
+    @case_studies = CaseStudy.order(:project_name => :asc)
     respond_to do |format|
-      format.html { }
+      format.html {
+        @grouped_case_studies = CaseStudy.group(:country).count
+        @case_studies = @case_studies.where("LOWER(project_name)=?", params[:q].downcase) if params[:q].present?
+      }
       format.csv { send_data @case_studies.to_csv }
     end
   end
