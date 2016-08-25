@@ -15,6 +15,7 @@ gem 'roo', '~> 2.4.0'
 gem 'roo-xls'
 gem 'omniauth'
 gem 'omniauth-linkedin'
+gem 'swagger-docs'
 
 group :development, :test do
   gem 'byebug'
