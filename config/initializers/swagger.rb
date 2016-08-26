@@ -5,14 +5,11 @@ class Swagger::Docs::Config
   end
 end
 
-
-swagger_base_path = Rails.env.production? ? 'https://thin-layer-replacement.herokuapp.com' : 'http://localhost:3000'
-
 Swagger::Docs::Config.register_apis({
                                         '1.0' => {
                                             controller_base_path: '',
                                             api_file_path: 'public/apidocs',
-                                            base_path: swagger_base_path,
+                                            base_path: 'https://thin-layer-replacement.herokuapp.com',
                                             clean_directory: true
                                         }
                                     })
