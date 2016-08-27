@@ -34,7 +34,7 @@
       <% points = JSON.parse(@case_study.measurements)["points"] %>
       L.polygon([
         <% points.each_with_index do |point,index| %>
-        [<%= point["lat"] %>, <%= point["lng"] %>]
+        [<%= point["lat"] %>, <%= point["lng"] %>],
         <% end %>
       ]).addTo(map).bindPopup("I am a polygon.");
 

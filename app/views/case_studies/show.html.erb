@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <%= render :partial => "map_show" %>
+  <%= render :partial => "map_show" if @case_study.measurements.present? %>
 </p>
 
 <p>
