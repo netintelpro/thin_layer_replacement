@@ -1,0 +1,58 @@
+<link rel="stylesheet" href="//cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css">
+<link rel="stylesheet" href="http://ljagis.github.io/leaflet-measure/leaflet-measure.css">
+<script src="//cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+<script src="http://ljagis.github.io/leaflet-measure/leaflet-measure.min.js"></script>
+<style>
+  body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+  #map {
+    height: 400px;
+    width: 98%;
+  }
+</style>
+
+<fieldset>
+  <legend>Map(Measurements)</legend>
+  <div id="map"></div>
+  <script>
+    (function (L, document) {
+      var map = L.map('map', {
+        measureControl: false,
+        layersControl: false
+      }).setView([<%= @case_study.latitude.to_f %>, <%= @case_study.longitude.to_f %>], 13);
+      L.tileLayer('//server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        minZoom: 1,
+        maxZoom: 18,
+        attribution: '&copy; Esri &mdash; Sources: Esri, DigitalGlobe, Earthstar Geographics, CNES/Airbus DS, GeoEye, USDA FSA, USGS, Getmapping, Aerogrid, IGN, IGP, swisstopo, and the GIS User Community'
+      }).addTo(map);
+
+      L.marker([<%= @case_study.latitude.to_f %>, <%= @case_study.longitude.to_f %>]).addTo(map)
+              .bindPopup("<%= @case_study.project_name %>");
+
+      <% points = JSON.parse(@case_study.measurements)["points"] %>
+      L.polygon([
+        <% points.each_with_index do |point,index| %>
+        [<%= point["lat"] %>, <%= point["lng"] %>]
+        <% end %>
+      ]).addTo(map).bindPopup("I am a polygon.");
+
+      map.on('measurefinish', function (evt) {});
+    })(window.L, window.document);
+  </script>
+</fieldset>
+
+<h1>Data</h1>
+<% measurement = JSON.parse(@case_study.measurements) %>
+<pre>
+  Area: <%= measurement["area"] %> Sq-meter <br />
+  areaDisplay: <%= measurement["areaDisplay"] %> <br />
+  length: <%= measurement["length"] %> Meters <br />
+  lengthDisplay: <%= measurement["lengthDisplay"] %> <br />
+  pointCount: <%= measurement["pointCount"] %> <br />
+  Points:
+  <% measurement["points"].each do |point| %>
+  Latitude: <%= point["lat"] %>, Longitude: <%= point["lng"] %>,
+  <% end %>
+</pre>
