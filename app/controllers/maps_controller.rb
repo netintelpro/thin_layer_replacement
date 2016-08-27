@@ -1,7 +1,8 @@
 class MapsController < ApplicationController
 
   def index
-    render :layout => false
+    @case_studies = CaseStudy.all
+    @map_view_case_study = @case_studies.first
   end
 
 

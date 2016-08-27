@@ -27,7 +27,6 @@ end
 gem 'devise'
 gem 'high_voltage'
 group :development do
-  gem 'better_errors'
   gem 'quiet_assets'
   gem 'rails_layout'
   gem 'spring-commands-rspec'

@@ -31,12 +31,12 @@
 <script src="http://heyman.github.io/leaflet-areaselect/src/leaflet-areaselect.js"></script>
 <script>
   // initialize map
-  var map =L.map('map').setView([51.505, -0.09], 13);
+  var map =L.map('map').setView([<%= @map_view_case_study.latitude.to_f %>, <%= @map_view_case_study.longitude.to_f %>], 13);
   L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
 
-  var areaSelect = L.areaSelect({width:200, height:250});
+  var areaSelect = L.areaSelect({width:200, height:200});
   areaSelect.on("change", function() {
     var bounds = this.getBounds();
     $("#result .sw").val(bounds.getSouthWest().lat + ", " + bounds.getSouthWest().lng);
@@ -44,10 +44,12 @@
   });
   areaSelect.addTo(map);
 
-  L.marker([51.5, -0.09]).addTo(map)
-          .bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+  <% @case_studies.each do |case_study| %>
+  L.marker([<%= case_study.latitude.to_f %>, <%= case_study.longitude.to_f %>]).addTo(map)
+          .bindPopup("<%= case_study.project_name %>");
+  <% end %>
 
-  L.circle([51.508, -0.11], 500, {
+  /*L.circle([51.508, -0.11], 500, {
     color: 'red',
     fillColor: '#f03',
     fillOpacity: 0.5
@@ -57,13 +59,13 @@
     [51.509, -0.08],
     [51.503, -0.06],
     [51.51, -0.047]
-  ]).addTo(map).bindPopup("I am a polygon.");
+  ]).addTo(map).bindPopup("I am a polygon.");*/
 
-  var popup = L.popup();
+  /*var popup = L.popup();
   function onMapClick(e) {
     popup.setLatLng(e.latlng).setContent("You clicked the map at " + e.latlng.toString()).openOn(map);
   }
-  map.on('click', onMapClick);
+  map.on('click', onMapClick);*/
 
   $("#remove").click(function() {
     areaSelect.remove();

@@ -1,5 +1,7 @@
 json.id                      case_study.id
 json.project_name            case_study.project_name
+json.latitude                case_study.latitude
+json.longitude               case_study.longitude
 
 json.owner do
   json.id                    case_study.user.id
