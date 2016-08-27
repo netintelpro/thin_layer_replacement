@@ -5,6 +5,7 @@ class Api::V1::CaseStudiesController < Api::BaseController
   swagger_api :index do
     summary 'Returns all case studies'
     notes 'Response is in Array'
+    param :query, :limit, :integer, :optional, "Limit to fetch case studies default is 10"
   end
 
   swagger_api :show do
@@ -15,7 +16,8 @@ class Api::V1::CaseStudiesController < Api::BaseController
   end
 
   def index
-    @case_studies = CaseStudy.all
+    limit = params[:limit] || 10
+    @case_studies = CaseStudy.limit(limit)
   end
 
   def show
