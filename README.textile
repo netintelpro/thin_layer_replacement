@@ -1,4 +1,4 @@
-Thin-Layer Placement
+## Thin-Layer Placement
 
 Thin-layer placement (TLP), for the purpose of this project, may be operationally defined as
 1) “purposeful” placement of dredged material with the objective of environmental restoration
@@ -6,17 +6,14 @@ or benefit without restriction to location (for example, upland, aquatic, marsh,
 and 2) dredged material placement at depths of “mm to cm” (or “inches to feet”) as compared to
 placements typical of disposal, which may be several meters in depth.
 
-CE-Dredge
-
+## CE-Dredge
 
 CE-Dredge, a collaborative effort between the US Army Engineer Research and Development
 Center (ERDC) and the US Army Corps of Engineers (USACE), Mobile District (CESAM), provides
 custom maps, tools, and applications designed to assist users in managing USACE dredging
 operations.
 
-
-Regional Sediment Management
-
+## Regional Sediment Management
 
 The Regional Sediment Management (RSM) program develops the tools and knowledge necessary
 to assist in the development and implementation of regional strategies and an understanding
@@ -28,7 +25,7 @@ long-term, large-scale morphology changes, and a framework for developing RSM st
 implementing RSM solutions in the field.
 
 
-Project Overview
+## Project Overview
 
 During Phase 1 of this project, the US Army Corps of Engineers, Mobile District, Operations
 Division, Spatial Data Branch, Geographic Information Systems Section(CESAM-OP-J-GIS)
@@ -39,32 +36,32 @@ on the CE-Dredge /RSM map.
 
 This map is available at https://sam-ap-map4mob.sam.ds.usace.army.mil/portal/home/item.html?id=1085411e5c7941b985d118a0d10814fd.
 
-
 During Phase 2, CEERD-EP-E requested that CESAM-OP-J-GIS enhance the web map by making it more user friendly and by providing additional functionality, including collecting case study data and making the map accessible to non-USACE users without a CAC as well as to USACE users.
 
 Now, CEERD-EP-E has requested that CESAM-OP-J-GIS enhance the web map and case study data
 collection web application.
 
-Definitions
- CAC—Common Access Card
- CEERD—US Army Corps of Engineers, Engineer Research and Development Center
- CEERD-EPE—US Army Corps of Engineers, Engineer Research and Development Center,
-Environmental Laboratory, Environmental Processes and Engineering Division, Environmental
-Engineering Branch
- CESAM—US Army Corps of Engineers, Mobile District
- CESAM-OP-J-GIS—US Army Corps of Engineers, Mobile District, Operations Division, Spatial
-Data Branch, Geographic Information Systems Section
- CRD—Customer Requirements Document
- ERDC—US Army Corps of Engineers, Engineer Research and Development Center
- GIS—Geographic Information System
- H2S—Hydrogen Sulfide
- NCF—National Channel Framework
- PA—Placement Area
- POC—Point of Contact
- RSM—Regional Sediment Management
- SAGA—Sediment Analysis and Geo-App
- TLP—Thin-Layer Placement
- UOM—Unit of Measure
- USACE—US Army Corps of Engineers
+## Definitions
+* CAC—Common Access Card
+* CEERD—US Army Corps of Engineers, Engineer Research and Development Center
+* CEERD-EPE—US Army Corps of Engineers, Engineer Research and Development Center,
+* Environmental Laboratory, Environmental Processes and Engineering Division, Environmental
+
+### Engineering Branch
+* CESAM—US Army Corps of Engineers, Mobile District
+* CESAM-OP-J-GIS—US Army Corps of Engineers, Mobile District, Operations Division, Spatial
+### Data Branch, Geographic Information Systems Section
+* CRD—Customer Requirements Document
+* ERDC—US Army Corps of Engineers, Engineer Research and Development Center
+### GIS—Geographic Information System
+* H2S—Hydrogen Sulfide
+* NCF—National Channel Framework
+* PA—Placement Area
+* POC—Point of Contact
+* RSM—Regional Sediment Management
+* SAGA—Sediment Analysis and Geo-App
+* TLP—Thin-Layer Placement
+* UOM—Unit of Measure
+* USACE—US Army Corps of Engineers
 
 
